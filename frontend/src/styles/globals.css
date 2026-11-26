@@ -929,6 +929,17 @@ th {
 .vibes-field .chips button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
 
 .updates-page { max-width: 1040px; }
+.admin-page { max-width: 1100px; }
+.admin-login { max-width: 580px; margin: 0 auto; width: 100%; }
+.admin-page h1 { font-size: clamp(36px, 5vw, 64px); }
+.admin-page .field { display: flex; flex-direction: column; align-items: stretch; gap: 8px; min-width: 0; }
+.admin-search { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 220px) auto; align-items: end; gap: 12px; }
+.admin-results-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.admin-record { border-top: 1px solid var(--border); padding-top: 20px; overflow-wrap: anywhere; }
+.admin-record .row { flex-wrap: wrap; gap: 10px; }
+.admin-record-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--muted); font-size: 13px; }
+.admin-counts strong { font-size: 32px; color: var(--accent); }
+@media (max-width: 690px) { .admin-search { grid-template-columns: 1fr; } .admin-page .section-top { align-items: flex-start; flex-wrap: wrap; gap: 16px; } }
 .crowd-insights { min-width: 0; }
 .crowd-trend { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
 .crowd-trend-day { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; padding: 12px 4px; border: 1px solid var(--border); background: transparent; border-radius: 10px; font-size: 13px; }

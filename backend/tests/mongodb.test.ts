@@ -8,6 +8,7 @@ import type { Participant } from "../src/types/index";
 import { saveUpdate, recentUpdates } from "../src/db/updates";
 import { saveCrowdSignal, crowdInsights } from "../src/db/crowd";
 import records from "../data/destinations.json";
+import { searchAdminRecords } from "../src/db/admin";
 
 // Opt in to downloading and launching a real, disposable MongoDB server.
 describe.skipIf(process.env.MONGODB_INTEGRATION !== "1")("MongoDB integration", () => {
@@ -143,6 +144,19 @@ describe.skipIf(process.env.MONGODB_INTEGRATION !== "1")("MongoDB integration", 
     expect(indexes.some((index) => index.key.expiresAt === 1 && index.expireAfterSeconds === 0)).toBe(true);
     await saveCrowdSignal(destination.id, { ...interest, interested: false });
     expect((await crowdInsights(destination.id, dates)).planning).toBe(0);
+  });
+  it("searches names across MongoDB trips and reports without exposing other travellers", async () => {
+    const name = "Admin Search Person", pattern = { name: "admin search", match: "contains" as const, page: 1 };
+    const room = await createRoom({ ...input, mode: "solo" }, { name, vibes: ["workation"], comfortBudget: 4000 });
+    await saveUpdate("goa", { anonId: crypto.randomUUID(), name, visitedOn: todayIST(), weather: "sunny", crowd: "quiet", experience: "go", note: "", visited: true });
+    const result = await searchAdminRecords(pattern);
+    expect(result.tripCount).toBe(1); expect(result.reportCount).toBe(1);
+    expect(result.trips[0].id).toBe(room.id);
+    expect(result.trips[0].matches[0].name).toBe(name);
+    expect(result.trips[0].matches[0]).not.toHaveProperty("id");
+    expect((await searchAdminRecords({ name: "Admin.*", match: "contains", page: 1 })).tripCount).toBe(0);
+    await (await database()).collection("rooms").updateOne({ _id: room.id } as never, { $set: { expiresAt: new Date(0) } });
+    expect((await searchAdminRecords(pattern)).tripCount).toBe(0);
   });
   it("requires MongoDB configuration in production", () => {
     vi.stubEnv("MONGODB_URI", "");
