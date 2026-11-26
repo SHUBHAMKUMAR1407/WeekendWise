@@ -1,0 +1,5462 @@
+[
+  {
+    "id": "rishikesh",
+    "name": "Rishikesh",
+    "state": "Uttarakhand",
+    "lat": 30.09,
+    "lon": 78.27,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "party_bonfire"
+    ],
+    "gateways": [
+      {
+        "id": "rishikesh-bus",
+        "type": "bus",
+        "name": "Rishikesh ISBT, Rishikesh",
+        "distanceKmToDest": 4,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            250
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "rishikesh-train",
+        "type": "train",
+        "name": "Haridwar Junction",
+        "code": "HW",
+        "distanceKmToDest": 28,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            80,
+            650
+          ],
+          "minutes": 60,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "rishikesh-airport",
+        "type": "airport",
+        "name": "Jolly Grant Airport, Dehradun",
+        "code": "DED",
+        "distanceKmToDest": 25,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            400,
+            1100
+          ],
+          "minutes": 45,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Delhi NCR": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "rishikesh-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            900,
+            2000
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Rishikesh ISBT, Rishikesh. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "rishikesh-train",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            450,
+            1800
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Haridwar Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "rishikesh-airport",
+          "hoursOnVehicle": 1,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "09:00-10:00",
+          "costRoundTripINR": [
+            5600,
+            11000
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to DED, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "rishikesh-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3200,
+            6500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Chandigarh": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "rishikesh-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            900,
+            2000
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Rishikesh ISBT, Rishikesh. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "rishikesh-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            2800,
+            5500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Haridwar Junction (long-distance gateway); Yog Nagari Rishikesh serves selected trains",
+    "nearestAirport": "Jolly Grant Airport, Dehradun",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Rafting weekends bring extra traffic near Tapovan."
+    ],
+    "weekendCities": [
+      "Delhi NCR",
+      "Chandigarh"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Ask which bank of the Ganga your stay is on.",
+      "Check bridge access locally before setting out.",
+      "Book a return pickup point away from the ghats."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the Tapovan lanes and cross to the quieter bank before lunch.",
+      "sunday": "Catch the morning ghats, then leave time for the Haridwar road."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "mussoorie",
+    "name": "Mussoorie",
+    "state": "Uttarakhand",
+    "lat": 30.46,
+    "lon": 78.07,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "mussoorie-bus",
+        "type": "bus",
+        "name": "Dehradun ISBT, Dehradun",
+        "distanceKmToDest": 40,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            150,
+            1300
+          ],
+          "minutes": 100,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mussoorie-train",
+        "type": "train",
+        "name": "Dehradun Railway Station",
+        "code": "DDN",
+        "distanceKmToDest": 36,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            100,
+            1200
+          ],
+          "minutes": 90,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mussoorie-airport",
+        "type": "airport",
+        "name": "Jolly Grant Airport, Dehradun",
+        "code": "DED",
+        "distanceKmToDest": 60,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            600,
+            2500
+          ],
+          "minutes": 120,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mussoorie-town",
+        "type": "bus",
+        "name": "Library Bus Stand, Mussoorie",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "taxi"
+          ],
+          "costINR": [
+            0,
+            120
+          ],
+          "minutes": 10,
+          "note": "Town-centre meeting point for a cab or self-drive. Agree the final drop with your stay."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Delhi NCR": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "mussoorie-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "04:00-05:00",
+          "costRoundTripINR": [
+            1000,
+            2300
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Ask the operator for the exact drop near Dehradun ISBT, Dehradun. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "mussoorie-train",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            550,
+            1900
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Dehradun Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "mussoorie-airport",
+          "hoursOnVehicle": 1,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "09:00-10:00",
+          "costRoundTripINR": [
+            5600,
+            11000
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to DED, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mussoorie-town",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "14:00-15:00",
+          "costRoundTripINR": [
+            4200,
+            8000
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Chandigarh": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "mussoorie-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            800,
+            1800
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Ask the operator for the exact drop near Dehradun ISBT, Dehradun. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mussoorie-town",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3200,
+            6500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Dehradun railway station",
+    "nearestAirport": "Jolly Grant Airport, Dehradun",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Mall Road fills quickly during school breaks."
+    ],
+    "weekendCities": [
+      "Delhi NCR",
+      "Chandigarh"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Carry a layer for Landour after sunset.",
+      "Check uphill vehicle restrictions with your stay.",
+      "Pack water before walking Camel's Back Road."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk Camel's Back Road early, then stop for lunch near Library Bazaar.",
+      "sunday": "Explore Landour on foot and descend before evening traffic."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "mcleodganj",
+    "name": "McLeodganj",
+    "state": "Himachal Pradesh",
+    "lat": 32.24,
+    "lon": 76.32,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "mcleodganj-bus",
+        "type": "bus",
+        "name": "McLeodganj Bus Stand, Dharamshala",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            250
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mcleodganj-train",
+        "type": "train",
+        "name": "Pathankot Cantt station",
+        "code": "PTKC",
+        "distanceKmToDest": 95,
+        "lastMile": {
+          "options": [
+            "shared_cab",
+            "taxi"
+          ],
+          "costINR": [
+            200,
+            2000
+          ],
+          "minutes": 190,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mcleodganj-airport",
+        "type": "airport",
+        "name": "Kangra Airport, Gaggal",
+        "code": "DHM",
+        "distanceKmToDest": 20,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            450,
+            1100
+          ],
+          "minutes": 55,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Delhi NCR": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "mcleodganj-bus",
+          "hoursOnVehicle": 11,
+          "typicalDepartureWindow": "19:00-20:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            1600,
+            3200
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near McLeodganj Bus Stand, Dharamshala. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "mcleodganj-train",
+          "hoursOnVehicle": 9,
+          "typicalDepartureWindow": "21:00-22:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            650,
+            2200
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Pathankot Cantt station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "mcleodganj-airport",
+          "hoursOnVehicle": 1.5,
+          "typicalDepartureWindow": "09:00-10:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            7000,
+            16000
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to DHM, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mcleodganj-bus",
+          "hoursOnVehicle": 11,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "17:00-18:00",
+          "costRoundTripINR": [
+            6500,
+            11000
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Chandigarh": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "mcleodganj-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            900,
+            2200
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near McLeodganj Bus Stand, Dharamshala. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mcleodganj-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3600,
+            6900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Kangra Mandir (narrow gauge); Pathankot for broad gauge",
+    "nearestAirport": "Kangra Airport, Gaggal",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Long weekends fill the approach road from Dharamshala."
+    ],
+    "weekendCities": [
+      "Delhi NCR",
+      "Chandigarh"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Check trail conditions in Dharamkot before a hike.",
+      "Use the public parking area before the main square.",
+      "Carry cash for shared taxis on the lower road."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk to the monastery area and take a slow lunch in the market.",
+      "sunday": "Spend the morning in Dharamkot, then descend for the bus."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "nainital",
+    "name": "Nainital",
+    "state": "Uttarakhand",
+    "lat": 29.39,
+    "lon": 79.45,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "nainital-bus",
+        "type": "bus",
+        "name": "Haldwani Roadways Bus Station",
+        "distanceKmToDest": 43,
+        "lastMile": {
+          "options": [
+            "shared_cab",
+            "taxi"
+          ],
+          "costINR": [
+            120,
+            1300
+          ],
+          "minutes": 105,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "nainital-train",
+        "type": "train",
+        "name": "Kathgodam Railway Station",
+        "code": "KGM",
+        "distanceKmToDest": 35,
+        "lastMile": {
+          "options": [
+            "shared_cab",
+            "taxi"
+          ],
+          "costINR": [
+            150,
+            1100
+          ],
+          "minutes": 90,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "nainital-airport",
+        "type": "airport",
+        "name": "Pantnagar Airport",
+        "code": "PGH",
+        "distanceKmToDest": 68,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            850,
+            2400
+          ],
+          "minutes": 150,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "nainital-town",
+        "type": "bus",
+        "name": "Tallital Bus Stand, Nainital",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "taxi"
+          ],
+          "costINR": [
+            0,
+            120
+          ],
+          "minutes": 10,
+          "note": "Town-centre meeting point for a cab or self-drive. Agree the final drop with your stay."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Delhi NCR": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "nainital-bus",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            1100,
+            2400
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Ask the operator for the exact drop near Haldwani Roadways Bus Station. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "nainital-train",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            500,
+            1800
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Kathgodam Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "nainital-airport",
+          "hoursOnVehicle": 1,
+          "typicalDepartureWindow": "09:00-10:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            6500,
+            14000
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to PGH, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "nainital-town",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "14:00-15:00",
+          "costRoundTripINR": [
+            4500,
+            8500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Kathgodam station",
+    "nearestAirport": "Pantnagar Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Lakefront traffic builds up on summer Saturdays."
+    ],
+    "weekendCities": [
+      "Delhi NCR"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Check the Tallital or Mallital side on your booking.",
+      "Bring a wind layer for the lakeside.",
+      "Allow extra time for downhill traffic at Kathgodam."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the eastern lake edge and browse the Mallital market.",
+      "sunday": "Start early around Tallital, then head down to the plains."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "kasauli",
+    "name": "Kasauli",
+    "state": "Himachal Pradesh",
+    "lat": 30.9,
+    "lon": 76.97,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "kasauli-bus",
+        "type": "bus",
+        "name": "Dharampur Bus Stand, Solan",
+        "distanceKmToDest": 12,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            60,
+            500
+          ],
+          "minutes": 35,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "kasauli-train",
+        "type": "train",
+        "name": "Kalka Railway Station",
+        "code": "KLK",
+        "distanceKmToDest": 28,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            150,
+            1000
+          ],
+          "minutes": 75,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "kasauli-airport",
+        "type": "airport",
+        "name": "Chandigarh International Airport",
+        "code": "IXC",
+        "distanceKmToDest": 65,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            800,
+            2200
+          ],
+          "minutes": 120,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "kasauli-town",
+        "type": "bus",
+        "name": "Kasauli Bus Stand",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "taxi"
+          ],
+          "costINR": [
+            0,
+            120
+          ],
+          "minutes": 10,
+          "note": "Town-centre meeting point for a cab or self-drive. Agree the final drop with your stay."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Chandigarh": [
+        {
+          "mode": "train",
+          "gatewayId": "kasauli-train",
+          "hoursOnVehicle": 1,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "09:00-10:00",
+          "costRoundTripINR": [
+            100,
+            500
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Kalka Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "kasauli-town",
+          "hoursOnVehicle": 2,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "09:00-10:00",
+          "costRoundTripINR": [
+            1600,
+            3700
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Delhi NCR": [
+        {
+          "mode": "train",
+          "gatewayId": "kasauli-train",
+          "hoursOnVehicle": 4.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "11:30-12:30",
+          "costRoundTripINR": [
+            550,
+            1600
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Kalka Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "kasauli-town",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3500,
+            6500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Sonwara (narrow gauge); Kalka for broad gauge",
+    "nearestAirport": "Chandigarh International Airport (practical gateway)",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Short drives from Chandigarh concentrate traffic around the market."
+    ],
+    "weekendCities": [
+      "Chandigarh",
+      "Delhi NCR"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Walk the upper market lanes before vehicles build up.",
+      "Check cantonment access locally.",
+      "Agree the downhill pickup with your driver a day ahead."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore the old market and an accessible section of the Gilbert Trail.",
+      "sunday": "Have breakfast in town and leave before afternoon hill traffic."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "state": "Rajasthan",
+    "lat": 26.91,
+    "lon": 75.79,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "jaipur-bus",
+        "type": "bus",
+        "name": "Sindhi Camp Bus Stand, Jaipur",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            200
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "jaipur-train",
+        "type": "train",
+        "name": "Jaipur Junction",
+        "code": "JP",
+        "distanceKmToDest": 4,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            200
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "jaipur-airport",
+        "type": "airport",
+        "name": "Jaipur International Airport",
+        "code": "JAI",
+        "distanceKmToDest": 13,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            100,
+            550
+          ],
+          "minutes": 40,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Delhi NCR": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "jaipur-bus",
+          "hoursOnVehicle": 5.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:30-12:30",
+          "costRoundTripINR": [
+            950,
+            2200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Sindhi Camp Bus Stand, Jaipur. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "jaipur-train",
+          "hoursOnVehicle": 4.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            500,
+            1700
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Jaipur Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "jaipur-airport",
+          "hoursOnVehicle": 1,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "08:00-09:00",
+          "costRoundTripINR": [
+            4800,
+            11500
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to JAI, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "jaipur-bus",
+          "hoursOnVehicle": 5.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:30-12:30",
+          "costRoundTripINR": [
+            3400,
+            6500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Ahmedabad": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "jaipur-bus",
+          "hoursOnVehicle": 11,
+          "typicalDepartureWindow": "20:00-21:00",
+          "typicalArrivalWindow": "07:00-08:00",
+          "costRoundTripINR": [
+            1300,
+            3000
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Sindhi Camp Bus Stand, Jaipur. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "jaipur-train",
+          "hoursOnVehicle": 11,
+          "typicalDepartureWindow": "20:00-21:00",
+          "typicalArrivalWindow": "07:00-08:00",
+          "costRoundTripINR": [
+            600,
+            2100
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Jaipur Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "jaipur-airport",
+          "hoursOnVehicle": 1.5,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            5500,
+            13000
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to JAI, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Jaipur Junction",
+    "nearestAirport": "Jaipur International Airport",
+    "costPerDay": {
+      "stay": [
+        400,
+        1000
+      ],
+      "food": [
+        250,
+        500
+      ],
+      "local": [
+        100,
+        280
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      4,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Winter sightseeing puts extra pressure on the old city."
+    ],
+    "weekendCities": [
+      "Delhi NCR",
+      "Ahmedabad"
+    ],
+    "bestTime": "October to March",
+    "localTips": [
+      "Use the metro to avoid old-city parking.",
+      "Check museum opening days independently.",
+      "Carry a scarf for exposed fort terraces."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Start in the walled city, then take an afternoon break in Johari Bazaar.",
+      "sunday": "Visit Amer early and budget time for the return across town."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "udaipur",
+    "name": "Udaipur",
+    "state": "Rajasthan",
+    "lat": 24.58,
+    "lon": 73.68,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "udaipur-bus",
+        "type": "bus",
+        "name": "Udaipole Bus Stand, Udaipur",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "udaipur-train",
+        "type": "train",
+        "name": "Udaipur City Railway Station",
+        "code": "UDZ",
+        "distanceKmToDest": 4,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            50,
+            220
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "udaipur-airport",
+        "type": "airport",
+        "name": "Maharana Pratap Airport, Udaipur",
+        "code": "UDR",
+        "distanceKmToDest": 24,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            300,
+            1000
+          ],
+          "minutes": 45,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Ahmedabad": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "udaipur-bus",
+          "hoursOnVehicle": 5.5,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "04:30-05:30",
+          "costRoundTripINR": [
+            1000,
+            2200
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Udaipole Bus Stand, Udaipur. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "udaipur-train",
+          "hoursOnVehicle": 5.5,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "13:30-14:30",
+          "costRoundTripINR": [
+            400,
+            1400
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Udaipur City Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "udaipur-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3300,
+            6200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Jaipur": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "udaipur-bus",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            1000,
+            2400
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Udaipole Bus Stand, Udaipur. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "udaipur-train",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "14:00-15:00",
+          "typicalArrivalWindow": "21:00-22:00",
+          "costRoundTripINR": [
+            450,
+            1600
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Udaipur City Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "udaipur-airport",
+          "hoursOnVehicle": 1,
+          "typicalDepartureWindow": "09:00-10:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            5500,
+            13000
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to UDR, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "udaipur-bus",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "13:00-14:00",
+          "costRoundTripINR": [
+            4500,
+            8000
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Udaipur City station",
+    "nearestAirport": "Maharana Pratap Airport, Udaipur",
+    "costPerDay": {
+      "stay": [
+        400,
+        1000
+      ],
+      "food": [
+        250,
+        500
+      ],
+      "local": [
+        100,
+        280
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      4,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Lakeside lanes fill during winter wedding season."
+    ],
+    "weekendCities": [
+      "Ahmedabad",
+      "Jaipur"
+    ],
+    "bestTime": "October to March",
+    "localTips": [
+      "Use a walking bag in the old city lanes.",
+      "Arrange pickup outside the car-restricted alleys.",
+      "Choose one lake for sunset to avoid backtracking."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the old city and take a long lunch beyond the palace lanes.",
+      "sunday": "Start at Fateh Sagar and head back before lakeside roads get busy."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "pushkar",
+    "name": "Pushkar",
+    "state": "Rajasthan",
+    "lat": 26.49,
+    "lon": 74.55,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "party_bonfire"
+    ],
+    "gateways": [
+      {
+        "id": "pushkar-bus",
+        "type": "bus",
+        "name": "Pushkar Bus Stand, Pushkar",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            0,
+            120
+          ],
+          "minutes": 10,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "pushkar-train",
+        "type": "train",
+        "name": "Ajmer Junction",
+        "code": "AII",
+        "distanceKmToDest": 15,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            650
+          ],
+          "minutes": 45,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "pushkar-airport",
+        "type": "airport",
+        "name": "Kishangarh Airport",
+        "code": "KQH",
+        "distanceKmToDest": 42,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            700,
+            1600
+          ],
+          "minutes": 70,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Jaipur": [
+        {
+          "mode": "train",
+          "gatewayId": "pushkar-train",
+          "hoursOnVehicle": 2,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "08:00-09:00",
+          "costRoundTripINR": [
+            250,
+            900
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Ajmer Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "pushkar-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            2000,
+            4300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Delhi NCR": [
+        {
+          "mode": "train",
+          "gatewayId": "pushkar-train",
+          "hoursOnVehicle": 6.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:30-13:30",
+          "costRoundTripINR": [
+            500,
+            1900
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Ajmer Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "pushkar-bus",
+          "hoursOnVehicle": 7.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "13:30-14:30",
+          "costRoundTripINR": [
+            4600,
+            8300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Pushkar Terminus; Ajmer Junction for intercity trains",
+    "nearestAirport": "Kishangarh Airport",
+    "costPerDay": {
+      "stay": [
+        400,
+        1000
+      ],
+      "food": [
+        250,
+        500
+      ],
+      "local": [
+        100,
+        280
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      4,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Pilgrimage dates and the Pushkar Fair can fill the town."
+    ],
+    "weekendCities": [
+      "Jaipur",
+      "Delhi NCR"
+    ],
+    "bestTime": "October to March",
+    "localTips": [
+      "Leave shoes at the designated ghat entrance.",
+      "Ask before photographing worshippers.",
+      "Check fair dates before choosing a stay."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Circle the lake on foot and browse the market lanes.",
+      "sunday": "Try a morning walk outside the bazaar before heading to Ajmer."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "mount-abu",
+    "name": "Mount Abu",
+    "state": "Rajasthan",
+    "lat": 24.59,
+    "lon": 72.72,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "mount-abu-bus",
+        "type": "bus",
+        "name": "Mount Abu Central Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mount-abu-train",
+        "type": "train",
+        "name": "Abu Road railway station",
+        "code": "ABR",
+        "distanceKmToDest": 28,
+        "lastMile": {
+          "options": [
+            "shared_cab",
+            "taxi"
+          ],
+          "costINR": [
+            80,
+            1000
+          ],
+          "minutes": 70,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mount-abu-airport",
+        "type": "airport",
+        "name": "Maharana Pratap Airport, Udaipur",
+        "code": "UDR",
+        "distanceKmToDest": 175,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            2000,
+            4800
+          ],
+          "minutes": 210,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Ahmedabad": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "mount-abu-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            900,
+            2100
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Mount Abu Central Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "mount-abu-train",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            350,
+            1400
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Abu Road railway station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mount-abu-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3000,
+            6600
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Jaipur": [
+        {
+          "mode": "train",
+          "gatewayId": "mount-abu-train",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            450,
+            1800
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Abu Road railway station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mount-abu-bus",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "14:00-15:00",
+          "costRoundTripINR": [
+            4900,
+            8800
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Abu Road station",
+    "nearestAirport": "Maharana Pratap Airport, Udaipur",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Summer weekends draw visitors up the Abu Road climb."
+    ],
+    "weekendCities": [
+      "Ahmedabad",
+      "Jaipur"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Check the latest entry hours at Dilwara.",
+      "Plan one side of the lake per walk.",
+      "Confirm your downhill seat before leaving town."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Start at Dilwara and spend the late afternoon around Nakki Lake.",
+      "sunday": "Take a short morning walk and allow time to descend to Abu Road."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "lonavala",
+    "name": "Lonavala",
+    "state": "Maharashtra",
+    "lat": 18.75,
+    "lon": 73.41,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "party_bonfire"
+    ],
+    "gateways": [
+      {
+        "id": "lonavala-bus",
+        "type": "bus",
+        "name": "Lonavala ST Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            160
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "lonavala-train",
+        "type": "train",
+        "name": "Lonavala Railway Station",
+        "code": "LNL",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "lonavala-airport",
+        "type": "airport",
+        "name": "Pune Airport",
+        "code": "PNQ",
+        "distanceKmToDest": 70,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            900,
+            2300
+          ],
+          "minutes": 105,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Mumbai": [
+        {
+          "mode": "train",
+          "gatewayId": "lonavala-train",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            200,
+            900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Lonavala Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "lonavala-bus",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            1800,
+            4200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Pune": [
+        {
+          "mode": "train",
+          "gatewayId": "lonavala-train",
+          "hoursOnVehicle": 1.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "08:30-09:30",
+          "costRoundTripINR": [
+            100,
+            450
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Lonavala Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "lonavala-bus",
+          "hoursOnVehicle": 1.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "08:30-09:30",
+          "costRoundTripINR": [
+            1300,
+            2900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Lonavala station",
+    "nearestAirport": "Pune Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1150
+      ],
+      "food": [
+        250,
+        480
+      ],
+      "local": [
+        100,
+        320
+      ]
+    },
+    "crowdByMonth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Monsoon day trips bring expressway queues."
+    ],
+    "weekendCities": [
+      "Mumbai",
+      "Pune"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Check local closure notices before visiting a waterfall.",
+      "Take grippy shoes for wet stone paths.",
+      "Avoid planning around the last local train."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore town in the morning, then pick one open viewpoint.",
+      "sunday": "Take the early local-market walk before the highway rush."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "mahabaleshwar",
+    "name": "Mahabaleshwar",
+    "state": "Maharashtra",
+    "lat": 17.92,
+    "lon": 73.66,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "mahabaleshwar-bus",
+        "type": "bus",
+        "name": "Mahabaleshwar ST Bus Stand",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            0,
+            150
+          ],
+          "minutes": 10,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mahabaleshwar-train",
+        "type": "train",
+        "name": "Satara Railway Station",
+        "code": "STR",
+        "distanceKmToDest": 61,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            100,
+            1800
+          ],
+          "minutes": 120,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mahabaleshwar-airport",
+        "type": "airport",
+        "name": "Pune Airport",
+        "code": "PNQ",
+        "distanceKmToDest": 130,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1500,
+            3500
+          ],
+          "minutes": 220,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Mumbai": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "mahabaleshwar-bus",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            1200,
+            2600
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Mahabaleshwar ST Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "mahabaleshwar-train",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "21:00-22:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            500,
+            1700
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Satara Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mahabaleshwar-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3800,
+            7300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ],
+      "Pune": [
+        {
+          "mode": "train",
+          "gatewayId": "mahabaleshwar-train",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            200,
+            900
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Satara Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mahabaleshwar-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            2000,
+            4200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Satara station",
+    "nearestAirport": "Pune Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1150
+      ],
+      "food": [
+        250,
+        480
+      ],
+      "local": [
+        100,
+        320
+      ]
+    },
+    "crowdByMonth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Long weekends bring queues at Venna Lake."
+    ],
+    "weekendCities": [
+      "Mumbai",
+      "Pune"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Ask which viewpoints are open in mist.",
+      "Carry a rain layer even on short market walks.",
+      "Leave spare time for the Wai ghat road."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Pick one viewpoint circuit and walk through the market afterwards.",
+      "sunday": "Visit the old town early before the descent towards Wai."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "igatpuri",
+    "name": "Igatpuri",
+    "state": "Maharashtra",
+    "lat": 19.7,
+    "lon": 73.56,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "igatpuri-bus",
+        "type": "bus",
+        "name": "Igatpuri ST Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            160
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "igatpuri-train",
+        "type": "train",
+        "name": "Igatpuri Railway Station",
+        "code": "IGP",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "igatpuri-airport",
+        "type": "airport",
+        "name": "Nashik Airport",
+        "code": "ISK",
+        "distanceKmToDest": 70,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            900,
+            2000
+          ],
+          "minutes": 105,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Mumbai": [
+        {
+          "mode": "train",
+          "gatewayId": "igatpuri-train",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "08:30-09:30",
+          "costRoundTripINR": [
+            200,
+            900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Igatpuri Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "igatpuri-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            2000,
+            4300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Igatpuri station",
+    "nearestAirport": "Nashik Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1150
+      ],
+      "food": [
+        250,
+        480
+      ],
+      "local": [
+        100,
+        320
+      ]
+    },
+    "crowdByMonth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Monsoon trail weekends increase local traffic."
+    ],
+    "weekendCities": [
+      "Mumbai"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Confirm access before walking towards a reservoir.",
+      "Use daylight for the approach roads.",
+      "Buy return tickets before the Sunday rush."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Take a local-lane walk and pick a viewpoint with open access.",
+      "sunday": "Have breakfast by the station and leave before the afternoon crowds."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "nashik",
+    "name": "Nashik",
+    "state": "Maharashtra",
+    "lat": 20,
+    "lon": 73.79,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "nashik-bus",
+        "type": "bus",
+        "name": "Nashik Central Bus Stand",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "nashik-train",
+        "type": "train",
+        "name": "Nasik Road Railway Station",
+        "code": "NK",
+        "distanceKmToDest": 10,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            350
+          ],
+          "minutes": 30,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "nashik-airport",
+        "type": "airport",
+        "name": "Nashik Airport",
+        "code": "ISK",
+        "distanceKmToDest": 22,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            400,
+            900
+          ],
+          "minutes": 40,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Mumbai": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "nashik-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            900,
+            1900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Nashik Central Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "nashik-train",
+          "hoursOnVehicle": 3.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            260,
+            1050
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Nasik Road Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "nashik-bus",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            2500,
+            4800
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Pune": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "nashik-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            950,
+            2200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Nashik Central Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "nashik-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            3100,
+            5900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Nasik Road station",
+    "nearestAirport": "Nashik Airport",
+    "costPerDay": {
+      "stay": [
+        350,
+        850
+      ],
+      "food": [
+        220,
+        420
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Pilgrimage weekends draw crowds around Panchavati."
+    ],
+    "weekendCities": [
+      "Mumbai",
+      "Pune"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Use a fixed pickup outside the old-city lanes.",
+      "Keep temple visits and outlying vineyards on separate halves of the day.",
+      "Confirm tasting appointments before travelling out of town."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk Panchavati and the old market, then take a quiet lunch break.",
+      "sunday": "Choose one outlying visit and keep a return buffer."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "gokarna",
+    "name": "Gokarna",
+    "state": "Karnataka",
+    "lat": 14.55,
+    "lon": 74.32,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "party_bonfire"
+    ],
+    "gateways": [
+      {
+        "id": "gokarna-bus",
+        "type": "bus",
+        "name": "Gokarna Bus Stand",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            250
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "gokarna-train",
+        "type": "train",
+        "name": "Gokarna Road Railway Station",
+        "code": "GOK",
+        "distanceKmToDest": 10,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            130,
+            500
+          ],
+          "minutes": 30,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "gokarna-airport",
+        "type": "airport",
+        "name": "Dabolim Airport, Goa",
+        "code": "GOI",
+        "distanceKmToDest": 145,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1800,
+            4900
+          ],
+          "minutes": 220,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Bengaluru": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "gokarna-bus",
+          "hoursOnVehicle": 10,
+          "typicalDepartureWindow": "20:00-21:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            1400,
+            3200
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Gokarna Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "gokarna-train",
+          "hoursOnVehicle": 12.5,
+          "typicalDepartureWindow": "18:00-19:00",
+          "typicalArrivalWindow": "06:30-07:30",
+          "costRoundTripINR": [
+            600,
+            1900
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Check the Panchaganga Express at Gokarna Road in both directions. Reserve the station auto separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "gokarna-bus",
+          "hoursOnVehicle": 9,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "15:00-16:00",
+          "costRoundTripINR": [
+            5900,
+            10000
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Gokarna Road station",
+    "nearestAirport": "Dabolim Airport, Goa (practical gateway)",
+    "costPerDay": {
+      "stay": [
+        450,
+        1050
+      ],
+      "food": [
+        250,
+        520
+      ],
+      "local": [
+        100,
+        260
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Holiday weekends concentrate visitors on the beach roads."
+    ],
+    "weekendCities": [
+      "Bengaluru"
+    ],
+    "bestTime": "November to February",
+    "localTips": [
+      "Confirm your stay's beach access before carrying luggage down steps.",
+      "Check beach flags before entering the water.",
+      "Arrange the return auto while you have signal."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the town centre in the morning and head to one beach before sunset.",
+      "sunday": "Take a slow breakfast and return to town for onward transport."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "coorg",
+    "name": "Coorg (Madikeri)",
+    "state": "Karnataka",
+    "lat": 12.42,
+    "lon": 75.74,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "coorg-bus",
+        "type": "bus",
+        "name": "Madikeri KSRTC Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "coorg-train",
+        "type": "train",
+        "name": "Mysuru Junction",
+        "code": "MYS",
+        "distanceKmToDest": 120,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            200,
+            2500
+          ],
+          "minutes": 195,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "coorg-airport",
+        "type": "airport",
+        "name": "Kannur International Airport",
+        "code": "CNN",
+        "distanceKmToDest": 90,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1200,
+            2800
+          ],
+          "minutes": 155,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Bengaluru": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "coorg-bus",
+          "hoursOnVehicle": 6.5,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "05:30-06:30",
+          "costRoundTripINR": [
+            1100,
+            2400
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Madikeri KSRTC Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "coorg-train",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "08:30-09:30",
+          "costRoundTripINR": [
+            200,
+            1100
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Mysuru Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "coorg-bus",
+          "hoursOnVehicle": 6,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:00-13:00",
+          "costRoundTripINR": [
+            3700,
+            7200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Mysuru Junction (practical gateway)",
+    "nearestAirport": "Kannur International Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1150
+      ],
+      "food": [
+        250,
+        480
+      ],
+      "local": [
+        100,
+        320
+      ]
+    },
+    "crowdByMonth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Estate stays fill during Bengaluru long weekends."
+    ],
+    "weekendCities": [
+      "Bengaluru"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Check your estate's distance from Madikeri bus stand.",
+      "Ask before entering a coffee plantation.",
+      "Download your last-mile map before leaving town."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore Madikeri market and arrange a hosted estate walk.",
+      "sunday": "Take a short morning walk and return through Madikeri."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "chikmagalur",
+    "name": "Chikmagalur",
+    "state": "Karnataka",
+    "lat": 13.32,
+    "lon": 75.77,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "chikmagalur-bus",
+        "type": "bus",
+        "name": "Chikkamagaluru KSRTC Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "chikmagalur-train",
+        "type": "train",
+        "name": "Kadur Junction",
+        "code": "DRU",
+        "distanceKmToDest": 40,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            80,
+            900
+          ],
+          "minutes": 65,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "chikmagalur-airport",
+        "type": "airport",
+        "name": "Mangaluru International Airport",
+        "code": "IXE",
+        "distanceKmToDest": 155,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1800,
+            4000
+          ],
+          "minutes": 245,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Bengaluru": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "chikmagalur-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "23:00-00:00",
+          "typicalArrivalWindow": "04:00-05:00",
+          "costRoundTripINR": [
+            950,
+            2200
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Chikkamagaluru KSRTC Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "chikmagalur-train",
+          "hoursOnVehicle": 3.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            250,
+            1100
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Kadur Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "chikmagalur-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            3100,
+            6100
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Chikkamagaluru station; Kadur Junction for more services",
+    "nearestAirport": "Mangaluru International Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1150
+      ],
+      "food": [
+        250,
+        480
+      ],
+      "local": [
+        100,
+        320
+      ]
+    },
+    "crowdByMonth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Peak weekends put pressure on Mullayanagiri access."
+    ],
+    "weekendCities": [
+      "Bengaluru"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Check local hill-entry permits before setting out.",
+      "Take a warm layer for exposed viewpoints.",
+      "Ask a plantation owner before entering coffee plots."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Pair a hosted coffee walk with the town market.",
+      "sunday": "Pick one accessible viewpoint and allow time to return."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "hampi",
+    "name": "Hampi",
+    "state": "Karnataka",
+    "lat": 15.34,
+    "lon": 76.46,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "heritage_streets"
+    ],
+    "gateways": [
+      {
+        "id": "hampi-bus",
+        "type": "bus",
+        "name": "Hosapete KSRTC Bus Stand",
+        "distanceKmToDest": 12,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            350
+          ],
+          "minutes": 30,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "hampi-train",
+        "type": "train",
+        "name": "Hosapete Junction",
+        "code": "HPT",
+        "distanceKmToDest": 13,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            50,
+            420
+          ],
+          "minutes": 35,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "hampi-airport",
+        "type": "airport",
+        "name": "Jindal Vijayanagar Airport",
+        "code": "VDY",
+        "distanceKmToDest": 38,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            650,
+            1500
+          ],
+          "minutes": 60,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "hampi-town",
+        "type": "bus",
+        "name": "Hampi Bus Stand",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "taxi"
+          ],
+          "costINR": [
+            0,
+            120
+          ],
+          "minutes": 10,
+          "note": "Town-centre meeting point for a cab or self-drive. Agree the final drop with your stay."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Bengaluru": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "hampi-bus",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            1100,
+            2400
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Ask the operator for the exact drop near Hosapete KSRTC Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "hampi-train",
+          "hoursOnVehicle": 9,
+          "typicalDepartureWindow": "21:00-22:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            450,
+            1600
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Hosapete Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "hampi-town",
+          "hoursOnVehicle": 6.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:30-13:30",
+          "costRoundTripINR": [
+            4300,
+            7800
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Hyderabad": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "hampi-bus",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "21:00-22:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            1200,
+            2700
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Ask the operator for the exact drop near Hosapete KSRTC Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "hampi-town",
+          "hoursOnVehicle": 7.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "13:30-14:30",
+          "costRoundTripINR": [
+            4600,
+            8300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Hosapete Junction",
+    "nearestAirport": "Jindal Vijayanagar Airport, Vidyanagar",
+    "costPerDay": {
+      "stay": [
+        350,
+        850
+      ],
+      "food": [
+        220,
+        420
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Winter weekends draw visitors to the main monument groups."
+    ],
+    "weekendCities": [
+      "Bengaluru",
+      "Hyderabad"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Pick one side of the river per half-day.",
+      "Carry refill water before the exposed monument walk.",
+      "Check ferry operations locally before relying on a crossing."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the temple and bazaar precinct early, then pause through the heat.",
+      "sunday": "Explore the royal enclosure before heading towards Hosapete."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "mysuru",
+    "name": "Mysuru",
+    "state": "Karnataka",
+    "lat": 12.31,
+    "lon": 76.65,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "mysuru-bus",
+        "type": "bus",
+        "name": "Mysuru Suburban Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            140
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mysuru-train",
+        "type": "train",
+        "name": "Mysuru Junction",
+        "code": "MYS",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            160
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mysuru-airport",
+        "type": "airport",
+        "name": "Mysuru Airport",
+        "code": "MYQ",
+        "distanceKmToDest": 12,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            180,
+            600
+          ],
+          "minutes": 30,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Bengaluru": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "mysuru-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "09:00-10:00",
+          "costRoundTripINR": [
+            450,
+            1100
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Mysuru Suburban Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "mysuru-train",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            180,
+            950
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Mysuru Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mysuru-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            1900,
+            4300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Chennai": [
+        {
+          "mode": "train",
+          "gatewayId": "mysuru-train",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "13:00-14:00",
+          "costRoundTripINR": [
+            550,
+            2200
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Mysuru Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "mysuru-bus",
+          "hoursOnVehicle": 8,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            1300,
+            2700
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Mysuru Suburban Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Mysuru Junction",
+    "nearestAirport": "Mysuru Airport, Mandakalli",
+    "costPerDay": {
+      "stay": [
+        350,
+        850
+      ],
+      "food": [
+        220,
+        420
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Dasara and palace weekends draw out-of-town visitors."
+    ],
+    "weekendCities": [
+      "Bengaluru",
+      "Chennai"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Check the palace illumination schedule for your date.",
+      "Try the early flower lanes around Devaraja Market.",
+      "Avoid combining distant sights near departure time."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Start at the palace and spend the cooler evening in the old market.",
+      "sunday": "Walk around Kukkarahalli Lake during its posted open hours."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "wayanad",
+    "name": "Wayanad (Kalpetta)",
+    "state": "Kerala",
+    "lat": 11.61,
+    "lon": 76.08,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "wayanad-bus",
+        "type": "bus",
+        "name": "Kalpetta Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "wayanad-train",
+        "type": "train",
+        "name": "Kozhikode Railway Station",
+        "code": "CLT",
+        "distanceKmToDest": 75,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            150,
+            2000
+          ],
+          "minutes": 140,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "wayanad-airport",
+        "type": "airport",
+        "name": "Calicut International Airport",
+        "code": "CCJ",
+        "distanceKmToDest": 90,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1200,
+            2900
+          ],
+          "minutes": 165,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Bengaluru": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "wayanad-bus",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "05:00-06:00",
+          "costRoundTripINR": [
+            1100,
+            2600
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Confirm the operator's forest crossing, actual detour and drop at Kalpetta. Night restrictions can change the route or duration.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "wayanad-bus",
+          "hoursOnVehicle": 6.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "12:30-13:30",
+          "costRoundTripINR": [
+            4100,
+            7800
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "high",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Kozhikode station (practical gateway)",
+    "nearestAirport": "Calicut International Airport, Kozhikode",
+    "costPerDay": {
+      "stay": [
+        500,
+        1150
+      ],
+      "food": [
+        250,
+        480
+      ],
+      "local": [
+        100,
+        320
+      ]
+    },
+    "crowdByMonth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Weekend cars cluster on ghat roads and around trail entrances."
+    ],
+    "weekendCities": [
+      "Bengaluru"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Check forest-road access for your travel window.",
+      "Book entry slots before driving to a trail.",
+      "Keep a rain cover handy for luggage on the ghat."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore Kalpetta and choose one currently open nature stop.",
+      "sunday": "Take a plantation walk by arrangement before the return drive."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "pondicherry",
+    "name": "Pondicherry",
+    "state": "Puducherry",
+    "lat": 11.93,
+    "lon": 79.83,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "pondicherry-bus",
+        "type": "bus",
+        "name": "Puducherry New Bus Stand",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            50,
+            220
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "pondicherry-train",
+        "type": "train",
+        "name": "Puducherry Railway Station",
+        "code": "PDY",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "pondicherry-airport",
+        "type": "airport",
+        "name": "Puducherry Airport",
+        "code": "PNY",
+        "distanceKmToDest": 6,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            150,
+            400
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Chennai": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "pondicherry-bus",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            700,
+            1700
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Puducherry New Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "pondicherry-train",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "18:00-19:00",
+          "typicalArrivalWindow": "22:00-23:00",
+          "costRoundTripINR": [
+            220,
+            900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Puducherry Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "pondicherry-bus",
+          "hoursOnVehicle": 3.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            2300,
+            4900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Bengaluru": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "pondicherry-bus",
+          "hoursOnVehicle": 7.5,
+          "typicalDepartureWindow": "22:00-23:00",
+          "typicalArrivalWindow": "05:30-06:30",
+          "costRoundTripINR": [
+            1100,
+            2700
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Puducherry New Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "pondicherry-train",
+          "hoursOnVehicle": 9,
+          "typicalDepartureWindow": "21:00-22:00",
+          "typicalArrivalWindow": "06:00-07:00",
+          "costRoundTripINR": [
+            550,
+            1700
+          ],
+          "overnight": true,
+          "changes": 0,
+          "bookingHint": "Direct trains run on selected days. Check both legs in IRCTC before committing to this option.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "pondicherry-bus",
+          "hoursOnVehicle": 7,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "13:00-14:00",
+          "costRoundTripINR": [
+            4300,
+            7900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Puducherry station",
+    "nearestAirport": "Puducherry Airport; Chennai for a wider flight network",
+    "costPerDay": {
+      "stay": [
+        450,
+        1000
+      ],
+      "food": [
+        240,
+        480
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      10,
+      11,
+      12
+    ],
+    "crowdNotes": [
+      "Long weekends concentrate visitors on the promenade."
+    ],
+    "weekendCities": [
+      "Chennai",
+      "Bengaluru"
+    ],
+    "bestTime": "December to February",
+    "localTips": [
+      "Check promenade vehicle restrictions before arranging pickup.",
+      "Start walking the Tamil Quarter before it gets hot.",
+      "Confirm museum closing days for your dates."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the Tamil and French quarters, then spend the evening on the promenade.",
+      "sunday": "Have an early breakfast and pick one museum ahead of departure."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "mahabalipuram",
+    "name": "Mahabalipuram",
+    "state": "Tamil Nadu",
+    "lat": 12.62,
+    "lon": 80.19,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "heritage_streets"
+    ],
+    "gateways": [
+      {
+        "id": "mahabalipuram-bus",
+        "type": "bus",
+        "name": "Mamallapuram Bus Stand",
+        "distanceKmToDest": 1,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            0,
+            120
+          ],
+          "minutes": 10,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mahabalipuram-train",
+        "type": "train",
+        "name": "Chengalpattu Junction",
+        "code": "CGL",
+        "distanceKmToDest": 32,
+        "lastMile": {
+          "options": [
+            "local_bus",
+            "taxi"
+          ],
+          "costINR": [
+            50,
+            900
+          ],
+          "minutes": 65,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "mahabalipuram-airport",
+        "type": "airport",
+        "name": "Chennai International Airport",
+        "code": "MAA",
+        "distanceKmToDest": 55,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            750,
+            1900
+          ],
+          "minutes": 95,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Chennai": [
+        {
+          "mode": "train",
+          "gatewayId": "mahabalipuram-train",
+          "hoursOnVehicle": 1.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "07:30-08:30",
+          "costRoundTripINR": [
+            100,
+            450
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to Chengalpattu Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "mahabalipuram-bus",
+          "hoursOnVehicle": 1.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "08:30-09:30",
+          "costRoundTripINR": [
+            1200,
+            2700
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Chengalpattu Junction",
+    "nearestAirport": "Chennai International Airport",
+    "costPerDay": {
+      "stay": [
+        450,
+        1000
+      ],
+      "food": [
+        240,
+        480
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      10,
+      11,
+      12
+    ],
+    "crowdNotes": [
+      "Day trips from Chennai crowd the seafront monuments."
+    ],
+    "weekendCities": [
+      "Chennai"
+    ],
+    "bestTime": "December to February",
+    "localTips": [
+      "Keep a hat ready for the exposed stone sites.",
+      "Check the ASI entry arrangements before queuing.",
+      "Use a pickup point clear of the temple approach."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Start at the rock-cut monuments and visit the shore precinct near evening.",
+      "sunday": "Browse the sculpture workshops with permission before returning."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "digha",
+    "name": "Digha",
+    "state": "West Bengal",
+    "lat": 21.63,
+    "lon": 87.51,
+    "vibes": [
+      "peace_cafes",
+      "party_bonfire",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "digha-bus",
+        "type": "bus",
+        "name": "Digha Central Bus Stand",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            150
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "digha-train",
+        "type": "train",
+        "name": "Digha Railway Station",
+        "code": "DGHA",
+        "distanceKmToDest": 2,
+        "lastMile": {
+          "options": [
+            "walk",
+            "auto"
+          ],
+          "costINR": [
+            30,
+            180
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "digha-airport",
+        "type": "airport",
+        "name": "Netaji Subhas Chandra Bose International Airport, Kolkata",
+        "code": "CCU",
+        "distanceKmToDest": 195,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            2600,
+            5200
+          ],
+          "minutes": 300,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Kolkata": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "digha-bus",
+          "hoursOnVehicle": 5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            650,
+            1500
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Digha Central Bus Stand. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "digha-train",
+          "hoursOnVehicle": 3.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            250,
+            1050
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Digha Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "digha-bus",
+          "hoursOnVehicle": 4.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            2500,
+            5100
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Digha station",
+    "nearestAirport": "Netaji Subhas Chandra Bose International Airport, Kolkata",
+    "costPerDay": {
+      "stay": [
+        450,
+        1000
+      ],
+      "food": [
+        240,
+        480
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "crowdNotes": [
+      "Kolkata weekend travellers fill beachfront roads."
+    ],
+    "weekendCities": [
+      "Kolkata"
+    ],
+    "bestTime": "December to February",
+    "localTips": [
+      "Confirm whether your stay is in Old or New Digha.",
+      "Follow local beach flags and tide notices.",
+      "Leave time to reach the station during Sunday checkout."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the New Digha seafront and explore the fish market lanes.",
+      "sunday": "Start early at Old Digha and return before evening departures fill."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "darjeeling",
+    "name": "Darjeeling",
+    "state": "West Bengal",
+    "lat": 27.04,
+    "lon": 88.26,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "darjeeling-bus",
+        "type": "bus",
+        "name": "Tenzing Norgay Central Bus Terminus, Siliguri",
+        "distanceKmToDest": 77,
+        "lastMile": {
+          "options": [
+            "shared_cab",
+            "taxi"
+          ],
+          "costINR": [
+            250,
+            2600
+          ],
+          "minutes": 180,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "darjeeling-train",
+        "type": "train",
+        "name": "New Jalpaiguri Junction",
+        "code": "NJP",
+        "distanceKmToDest": 85,
+        "lastMile": {
+          "options": [
+            "shared_cab",
+            "taxi"
+          ],
+          "costINR": [
+            300,
+            3000
+          ],
+          "minutes": 200,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "darjeeling-airport",
+        "type": "airport",
+        "name": "Bagdogra Airport",
+        "code": "IXB",
+        "distanceKmToDest": 90,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            350,
+            3200
+          ],
+          "minutes": 210,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Kolkata": [
+        {
+          "mode": "bus_sleeper",
+          "gatewayId": "darjeeling-bus",
+          "hoursOnVehicle": 12,
+          "typicalDepartureWindow": "19:00-20:00",
+          "typicalArrivalWindow": "07:00-08:00",
+          "costRoundTripINR": [
+            1600,
+            3400
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Ask the operator for the exact drop near Tenzing Norgay Central Bus Terminus, Siliguri. Check the return service separately.",
+          "weatherSensitivity": "high",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "darjeeling-train",
+          "hoursOnVehicle": 10,
+          "typicalDepartureWindow": "21:00-22:00",
+          "typicalArrivalWindow": "07:00-08:00",
+          "costRoundTripINR": [
+            650,
+            2400
+          ],
+          "overnight": true,
+          "changes": 1,
+          "bookingHint": "Check IRCTC services to New Jalpaiguri Junction for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "flight",
+          "gatewayId": "darjeeling-airport",
+          "hoursOnVehicle": 1.25,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "09:15-10:15",
+          "costRoundTripINR": [
+            5500,
+            13500
+          ],
+          "overnight": false,
+          "changes": 1,
+          "bookingHint": "Check flights to IXB, baggage charges and onward taxis. Allow airport processing time.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Darjeeling (narrow gauge); New Jalpaiguri for intercity trains",
+    "nearestAirport": "Bagdogra Airport",
+    "costPerDay": {
+      "stay": [
+        500,
+        1100
+      ],
+      "food": [
+        280,
+        500
+      ],
+      "local": [
+        100,
+        300
+      ]
+    },
+    "crowdByMonth": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "monsoonRisk": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowdNotes": [
+      "Clear-weather months draw extra hill traffic."
+    ],
+    "weekendCities": [
+      "Kolkata"
+    ],
+    "bestTime": "March to June or October to November",
+    "localTips": [
+      "Book the downhill shared jeep before Sunday morning.",
+      "Keep a warm layer for the ridge even in spring.",
+      "Check toy train operations for the actual date."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Walk the Chowrasta lanes and pick one tea stop with confirmed entry.",
+      "sunday": "Start along the ridge, then allow a generous hill-road return buffer."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "santiniketan",
+    "name": "Santiniketan",
+    "state": "West Bengal",
+    "lat": 23.68,
+    "lon": 87.68,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "santiniketan-bus",
+        "type": "bus",
+        "name": "Bolpur Bus Stand",
+        "distanceKmToDest": 4,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            200
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "santiniketan-train",
+        "type": "train",
+        "name": "Bolpur Shantiniketan station",
+        "code": "BHP",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            200
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "santiniketan-airport",
+        "type": "airport",
+        "name": "Kazi Nazrul Islam Airport, Andal",
+        "code": "RDP",
+        "distanceKmToDest": 75,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1000,
+            2200
+          ],
+          "minutes": 105,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Kolkata": [
+        {
+          "mode": "train",
+          "gatewayId": "santiniketan-train",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "09:30-10:30",
+          "costRoundTripINR": [
+            180,
+            850
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Bolpur Shantiniketan station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "santiniketan-bus",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            2400,
+            4900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Bolpur Shantiniketan station",
+    "nearestAirport": "Kazi Nazrul Islam Airport, Andal",
+    "costPerDay": {
+      "stay": [
+        350,
+        850
+      ],
+      "food": [
+        220,
+        420
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Festival weekends draw visitors around Bolpur and the university."
+    ],
+    "weekendCities": [
+      "Kolkata"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Check campus visitor rules before the trip.",
+      "Ask artists before taking photos of their work.",
+      "Agree a toto fare before leaving Bolpur station."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore the campus areas open to visitors and a craft market.",
+      "sunday": "Take an early walk in the red-earth lanes before returning to Bolpur."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "warangal",
+    "name": "Warangal",
+    "state": "Telangana",
+    "lat": 17.97,
+    "lon": 79.59,
+    "vibes": [
+      "peace_cafes",
+      "trek_adventure",
+      "heritage_streets"
+    ],
+    "gateways": [
+      {
+        "id": "warangal-bus",
+        "type": "bus",
+        "name": "Hanamkonda Bus Station",
+        "distanceKmToDest": 5,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            200
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "warangal-train",
+        "type": "train",
+        "name": "Warangal Railway Station",
+        "code": "WL",
+        "distanceKmToDest": 4,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            40,
+            180
+          ],
+          "minutes": 20,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "warangal-airport",
+        "type": "airport",
+        "name": "Rajiv Gandhi International Airport, Hyderabad",
+        "code": "HYD",
+        "distanceKmToDest": 170,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            1800,
+            4200
+          ],
+          "minutes": 210,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Hyderabad": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "warangal-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            500,
+            1250
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near Hanamkonda Bus Station. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "warangal-train",
+          "hoursOnVehicle": 2.5,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "08:30-09:30",
+          "costRoundTripINR": [
+            180,
+            850
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Warangal Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "warangal-bus",
+          "hoursOnVehicle": 3,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            1700,
+            3900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Warangal station; Kazipet Junction for Hanamkonda",
+    "nearestAirport": "Rajiv Gandhi International Airport, Hyderabad",
+    "costPerDay": {
+      "stay": [
+        350,
+        850
+      ],
+      "food": [
+        220,
+        420
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Temple festival dates and school trips add daytime crowds."
+    ],
+    "weekendCities": [
+      "Hyderabad"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Group the Hanamkonda sights into one outing.",
+      "Carry water for the exposed fort area.",
+      "Confirm which station your return service uses."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore Warangal Fort early and spend the afternoon in Hanamkonda.",
+      "sunday": "Visit the Thousand Pillar Temple precinct and return to your railhead."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "bidar",
+    "name": "Bidar",
+    "state": "Karnataka",
+    "lat": 17.91,
+    "lon": 77.52,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "bidar-bus",
+        "type": "bus",
+        "name": "Bidar Central Bus Stand",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            30,
+            150
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "bidar-train",
+        "type": "train",
+        "name": "Bidar Railway Station",
+        "code": "BIDR",
+        "distanceKmToDest": 3,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            30,
+            160
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "bidar-airport",
+        "type": "airport",
+        "name": "Bidar Airport",
+        "code": "IXX",
+        "distanceKmToDest": 5,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            100,
+            400
+          ],
+          "minutes": 15,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Hyderabad": [
+        {
+          "mode": "train",
+          "gatewayId": "bidar-train",
+          "hoursOnVehicle": 3.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            200,
+            900
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Bidar Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "bidar-bus",
+          "hoursOnVehicle": 3.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "10:30-11:30",
+          "costRoundTripINR": [
+            2000,
+            4300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Bidar station",
+    "nearestAirport": "Bidar Airport (check operating flights)",
+    "costPerDay": {
+      "stay": [
+        350,
+        850
+      ],
+      "food": [
+        220,
+        420
+      ],
+      "local": [
+        80,
+        220
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Winter day trips concentrate around the fort."
+    ],
+    "weekendCities": [
+      "Hyderabad"
+    ],
+    "bestTime": "October to February",
+    "localTips": [
+      "Ask a Bidri artisan before photographing their workshop.",
+      "Pack water before walking the fort grounds.",
+      "Leave time to reach your pickup outside the old lanes."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Explore the fort early and arrange a Bidri workshop visit in town.",
+      "sunday": "Walk the old-city lanes before an early afternoon return."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  },
+  {
+    "id": "agra",
+    "name": "Agra",
+    "state": "Uttar Pradesh",
+    "lat": 27.18,
+    "lon": 78.01,
+    "vibes": [
+      "peace_cafes",
+      "heritage_streets",
+      "workation"
+    ],
+    "gateways": [
+      {
+        "id": "agra-bus",
+        "type": "bus",
+        "name": "ISBT Transport Nagar, Agra",
+        "distanceKmToDest": 9,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            100,
+            400
+          ],
+          "minutes": 35,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "agra-train",
+        "type": "train",
+        "name": "Agra Cantonment Railway Station",
+        "code": "AGC",
+        "distanceKmToDest": 6,
+        "lastMile": {
+          "options": [
+            "auto",
+            "taxi"
+          ],
+          "costINR": [
+            60,
+            250
+          ],
+          "minutes": 25,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      },
+      {
+        "id": "agra-airport",
+        "type": "airport",
+        "name": "Agra Airport",
+        "code": "AGR",
+        "distanceKmToDest": 12,
+        "lastMile": {
+          "options": [
+            "taxi"
+          ],
+          "costINR": [
+            200,
+            650
+          ],
+          "minutes": 35,
+          "note": "Estimate to the central stay area. Confirm your property's pickup point and fare."
+        },
+        "lateNightSafe": false
+      }
+    ],
+    "routes": {
+      "Delhi NCR": [
+        {
+          "mode": "bus_volvo",
+          "gatewayId": "agra-bus",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            650,
+            1550
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Ask the operator for the exact drop near ISBT Transport Nagar, Agra. Check the return service separately.",
+          "weatherSensitivity": "medium",
+          "available": true
+        },
+        {
+          "mode": "train",
+          "gatewayId": "agra-train",
+          "hoursOnVehicle": 2,
+          "typicalDepartureWindow": "08:00-09:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            280,
+            1550
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Agra Cantonment Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "agra-bus",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "06:00-07:00",
+          "typicalArrivalWindow": "10:00-11:00",
+          "costRoundTripINR": [
+            2600,
+            5100
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ],
+      "Jaipur": [
+        {
+          "mode": "train",
+          "gatewayId": "agra-train",
+          "hoursOnVehicle": 4,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "11:00-12:00",
+          "costRoundTripINR": [
+            300,
+            1300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Check IRCTC services to Agra Cantonment Railway Station for both dates. Confirm the boarding station and class.",
+          "weatherSensitivity": "low",
+          "available": true
+        },
+        {
+          "mode": "cab_self_drive",
+          "gatewayId": "agra-bus",
+          "hoursOnVehicle": 4.5,
+          "typicalDepartureWindow": "07:00-08:00",
+          "typicalArrivalWindow": "11:30-12:30",
+          "costRoundTripINR": [
+            2700,
+            5300
+          ],
+          "overnight": false,
+          "changes": 0,
+          "bookingHint": "Self-drive estimate assumes one traveller covers the rental, fuel and tolls. Check deposit, parking and return conditions.",
+          "weatherSensitivity": "medium",
+          "available": true
+        }
+      ]
+    },
+    "nearestRailhead": "Agra Cantt station (long-distance gateway)",
+    "nearestAirport": "Agra Airport, Kheria",
+    "costPerDay": {
+      "stay": [
+        400,
+        1000
+      ],
+      "food": [
+        250,
+        500
+      ],
+      "local": [
+        100,
+        280
+      ]
+    },
+    "crowdByMonth": [
+      4,
+      3,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      4,
+      4
+    ],
+    "monsoonRisk": [
+      7,
+      8
+    ],
+    "crowdNotes": [
+      "Winter mornings bring queues around the Taj precinct."
+    ],
+    "weekendCities": [
+      "Delhi NCR",
+      "Jaipur"
+    ],
+    "bestTime": "October to March",
+    "localTips": [
+      "Check the Taj Mahal's Friday closure before fixing dates.",
+      "Use a pickup outside the restricted monument zone.",
+      "Keep a fog buffer for the winter train home."
+    ],
+    "itineraryTemplate": {
+      "fridayNight": "Confirm the arrival pickup and check-in window. Take the overnight service if selected, or rest before a morning departure.",
+      "saturday": "Visit the Taj precinct early and spend the afternoon at Agra Fort.",
+      "sunday": "Explore a craft lane by arrangement before returning."
+    },
+    "hasGoSTOPS": false,
+    "confidence": "estimated",
+    "lastVerified": null
+  }
+]

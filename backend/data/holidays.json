@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Christmas and New Year travel",
+    "startDate": "2026-12-25",
+    "endDate": "2027-01-01",
+    "verification": "TODO"
+  },
+  {
+    "name": "Pongal and Sankranti weekend",
+    "startDate": "2027-01-15",
+    "endDate": "2027-01-17",
+    "states": [
+      "Tamil Nadu",
+      "Puducherry",
+      "Telangana",
+      "Karnataka"
+    ],
+    "verification": "TODO"
+  },
+  {
+    "name": "Uttarayan travel",
+    "startDate": "2027-01-14",
+    "endDate": "2027-01-15",
+    "states": [
+      "Gujarat"
+    ],
+    "verification": "TODO"
+  },
+  {
+    "name": "Republic Day",
+    "startDate": "2027-01-26",
+    "endDate": "2027-01-26",
+    "verification": "TODO"
+  },
+  {
+    "name": "Shivaji Jayanti weekend",
+    "startDate": "2027-02-19",
+    "endDate": "2027-02-21",
+    "states": [
+      "Maharashtra"
+    ],
+    "verification": "TODO"
+  },
+  {
+    "name": "Shivaratri temple weekend",
+    "startDate": "2027-03-06",
+    "endDate": "2027-03-07",
+    "verification": "TODO"
+  },
+  {
+    "name": "Eid travel window (moon sighting may change dates)",
+    "startDate": "2027-03-10",
+    "endDate": "2027-03-10",
+    "verification": "TODO"
+  },
+  {
+    "name": "Holi and Dol travel",
+    "startDate": "2027-03-20",
+    "endDate": "2027-03-23",
+    "verification": "TODO"
+  },
+  {
+    "name": "Good Friday long weekend",
+    "startDate": "2027-03-26",
+    "endDate": "2027-03-28",
+    "verification": "TODO"
+  },
+  {
+    "name": "Ugadi and Gudi Padwa travel",
+    "startDate": "2027-04-07",
+    "endDate": "2027-04-07",
+    "states": [
+      "Maharashtra",
+      "Karnataka",
+      "Telangana"
+    ],
+    "verification": "TODO"
+  },
+  {
+    "name": "April new year and Ram Navami travel",
+    "startDate": "2027-04-14",
+    "endDate": "2027-04-15",
+    "verification": "TODO"
+  },
+  {
+    "name": "Mahavir Jayanti long weekend",
+    "startDate": "2027-04-17",
+    "endDate": "2027-04-19",
+    "verification": "TODO"
+  },
+  {
+    "name": "Summer school-break travel (estimated window)",
+    "startDate": "2027-05-01",
+    "endDate": "2027-05-26",
+    "states": [
+      "Himachal Pradesh",
+      "Uttarakhand",
+      "Maharashtra",
+      "Karnataka",
+      "Tamil Nadu",
+      "Kerala"
+    ],
+    "verification": "TODO"
+  },
+  {
+    "name": "Bakrid long weekend (moon sighting may change dates)",
+    "startDate": "2027-05-15",
+    "endDate": "2027-05-17",
+    "verification": "TODO"
+  },
+  {
+    "name": "Buddha Purnima",
+    "startDate": "2027-05-20",
+    "endDate": "2027-05-20",
+    "verification": "TODO"
+  }
+]
