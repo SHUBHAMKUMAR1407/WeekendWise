@@ -1,6 +1,6 @@
 import { body, failure } from "@backend/http/api";
 import { eventSchema } from "@backend/schemas/trip";
-import { ApiError, rate } from "@backend/db/redis";
+import { ApiError, rate } from "@backend/db/store";
 import { trackServer } from "@backend/analytics/analytics";
 export async function POST(req: Request) {
   try {

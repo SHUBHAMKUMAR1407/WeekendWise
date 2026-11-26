@@ -1,5 +1,5 @@
 import { ZodError, type ZodTypeAny, z } from "zod";
-import { ApiError } from "../db/redis";
+import { ApiError } from "../db/store";
 import { roomId } from "../schemas/trip";
 export type Context = { params: Promise<{ id: string }> };
 export async function parseId(c: Context) {

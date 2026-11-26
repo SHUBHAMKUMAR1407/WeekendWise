@@ -1,6 +1,6 @@
 import { body, failure } from "@backend/http/api";
 import { createSchema } from "@backend/schemas/trip";
-import { createRoom, rate } from "@backend/db/redis";
+import { createRoom, rate } from "@backend/db/store";
 import { trackServer } from "@backend/analytics/analytics";
 export async function POST(req: Request) {
   try {

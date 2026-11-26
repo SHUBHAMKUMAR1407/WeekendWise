@@ -1,6 +1,6 @@
 import { body, parseId, failure, type Context } from "@backend/http/api";
 import { z } from "zod";
-import { ApiError, markRevealed } from "@backend/db/redis";
+import { ApiError, markRevealed } from "@backend/db/store";
 import { report, requireRoom } from "@backend/services/reveal";
 export async function POST(req: Request, c: Context) {
   try {

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ApiError } from "../db/redis";
+import { ApiError } from "../db/store";
 
 export const placesInput = z.object({
   input: z.string().trim().min(2).max(160).regex(/^[^\u0000-\u001f\u007f]+$/),

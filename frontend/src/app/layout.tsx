@@ -18,7 +18,7 @@ import { Header, Footer } from "@frontend/components/layout/Shell";
 import PageViews from "@frontend/components/layout/PageViews";
 export const metadata: Metadata = {
   title: {
-    default: "WeekendWise — Weekend trip planner",
+    default: "WeekendWise",
     template: "%s · WeekendWise",
   },
   description:

@@ -1,8 +1,7 @@
 import { vi, describe, it, expect } from "vitest";
 import { trackServer, metrics, isCrawler } from "../src/analytics/analytics";
 vi.hoisted(() => {
-  vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
-  vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+  vi.stubEnv("MONGODB_URI", "");
 });
 describe("funnel", () => {
   it("counts unique people and ordered steps, with server-side deduplication", async () => {

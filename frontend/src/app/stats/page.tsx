@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { statsAccess } from "@backend/auth/stats";
 import { todayIST } from "@backend/utils/dates";
 import { metrics, STAGES } from "@backend/analytics/analytics";
-import { requireStore } from "@backend/db/redis";
+import { requireStore } from "@backend/db/store";
 export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Funnel dashboard",

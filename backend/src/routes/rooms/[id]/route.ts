@@ -1,5 +1,5 @@
 import { failure, parseId, type Context } from "@backend/http/api";
-import { ApiError, getRoom } from "@backend/db/redis";
+import { ApiError, getRoom } from "@backend/db/store";
 export async function GET(req: Request, c: Context) {
   try {
     const r = await getRoom(await parseId(c));

@@ -1,7 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { recommend, DESTINATIONS } from "./planner";
 import { weather } from "./weather";
-import { ApiError, getRoom } from "../db/redis";
+import { ApiError, getRoom } from "../db/store";
 import type { Room } from "../types/index";
 const cached = unstable_cache(
   async (

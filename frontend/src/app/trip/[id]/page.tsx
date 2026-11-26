@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getRoom } from "@backend/db/redis";
+import { getRoom } from "@backend/db/store";
 import { roomId } from "@backend/schemas/trip";
 import RoomView from "@frontend/components/trip/RoomView";
 import type { Context } from "@backend/http/api";

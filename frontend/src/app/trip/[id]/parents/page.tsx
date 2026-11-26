@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Parents from "@frontend/components/parents/Parents";
 import { roomId, cardQuery } from "@backend/schemas/trip";
-import { getRoom } from "@backend/db/redis";
+import { getRoom } from "@backend/db/store";
 import { chosen } from "@backend/services/reveal";
 export const dynamic = "force-dynamic";
 export default async function ParentPage({

@@ -6,11 +6,10 @@ import {
   getRoom,
   markRevealed,
   TTL,
-} from "../src/db/redis";
+} from "../src/db/store";
 import type { Participant } from "../src/types/index";
 vi.hoisted(() => {
-  vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
-  vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+  vi.stubEnv("MONGODB_URI", "");
 });
 const input = {
   mode: "group" as const,

@@ -1,5 +1,5 @@
 import { body, failure } from "../../../http/api";
-import { ApiError, rate } from "../../../db/redis";
+import { ApiError, rate } from "../../../db/store";
 import { autocompletePlaces, placesInput } from "../../../services/places";
 
 export async function POST(req: Request) {

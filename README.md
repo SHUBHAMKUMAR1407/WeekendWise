@@ -4,7 +4,7 @@ A zero-login weekend trip planner for Indian travellers. A group link collects v
 
 ## Live preview
 
-[Open WeekendWise on Vercel](https://prompt-birch-o359hjo.tmp.now). This temporary deployment expires **26 November 2026 at 4:15 AM IST** unless claimed. Its QA Redis database expires on 28 November unless claimed separately. The private ownership links and stats dashboard are in the ignored local file `.vercel/CLAIM.md`.
+[Open WeekendWise on Vercel](https://prompt-birch-o359hjo.tmp.now). This temporary deployment expires **26 November 2026 at 4:15 AM IST** unless claimed. This preview predates the MongoDB migration and must be redeployed with MongoDB configuration. The private ownership links and stats dashboard are in the ignored local file `.vercel/CLAIM.md`.
 
 The public deployment passed room creation, joining, reveal, Parent Pack rendering, protected CSV and both PNG endpoints. A request using WhatsApp's crawler user agent found the image in the HTML head and fetched the advertised PNG from the public domain.
 
@@ -24,7 +24,7 @@ WeekendWise/
 ?   ??? src/
 ?   ?   ??? routes/              # HTTP handlers
 ?   ?   ??? services/            # Trip planning, weather, transport and cards
-?   ?   ??? db/                  # Redis storage and request quotas
+?   ?   ??? db/                  # MongoDB storage and request quotas
 ?   ?   ??? analytics/           # First-party event aggregation
 ?   ?   ??? auth/                # Stats access checks
 ?   ?   ??? schemas/             # API input validation
@@ -51,15 +51,19 @@ npm ci
 npm run dev
 ```
 
-Open [the local planner](http://localhost:3000). Development runs without credentials using process-local memory. Restarting the dev server clears those rooms. To exercise persistent rooms, create `.env.local` from `.env.example` and configure Upstash. Production requires Redis and returns a friendly service error if storage is unavailable.
+Open [the local planner](http://localhost:3000). Development runs without credentials using process-local memory. Restarting the dev server clears those rooms. To exercise persistent rooms, copy `.env.example` to `.env.local` and configure MongoDB. Production requires MongoDB and returns a friendly service error if storage is unavailable.
 
 | Variable | Value |
 | --- | --- |
-| `UPSTASH_REDIS_REST_URL` | HTTPS endpoint from your Upstash Redis database |
-| `UPSTASH_REDIS_REST_TOKEN` | Server-side read/write REST token |
+| `MONGODB_URI` | Server-side MongoDB connection string (Atlas or local MongoDB) |
+| `MONGODB_DB` | Database name; defaults to `weekendwise` |
 | `GOOGLE_MAPS_API_KEY` | Server-side Google Maps Places API (New) key for live address autocomplete |
 | `STATS_SECRET` | A long random secret for the funnel dashboard and CSV |
 | `NEXT_PUBLIC_SITE_URL` | Public HTTPS origin used in WhatsApp and Twitter previews |
+
+For a local MongoDB server, set `MONGODB_URI=mongodb://127.0.0.1:27017` and `MONGODB_DB=weekendwise` in `.env.local`. For Atlas, use your cluster's Node.js connection string, create a database user with read/write access to this database, and allow the application server through Atlas network access. Restart the development server after changing environment variables. A value in `.env.development.local` takes precedence over `.env.local` during development.
+
+The application reuses its MongoDB connection pool and creates `rooms`, `rate_limits`, and `analytics` collections with indexes automatically. Rooms expire 30 days after creation; reads and updates reject expired rooms immediately even before MongoDB's TTL cleanup runs. Request quotas use atomic sliding hourly windows. Analytics remains best effort and never blocks trip planning when unavailable. Configured MongoDB connection failures return errors rather than silently falling back to memory. Existing Redis data is not copied automatically; older room links require a separate data migration if they must be retained.
 
 ## Google Maps address suggestions
 
@@ -74,11 +78,11 @@ The integration is verified with mocked provider responses, missing credentials,
 ## Deploy on Vercel
 
 1. Import this project into Vercel with the **Next.js** preset and repository root as the root directory. Use Node.js 22, `npm ci` and `npm run build`.
-2. Add both Upstash variables and `STATS_SECRET` to the production environment. Set `NEXT_PUBLIC_SITE_URL` to the project's public domain. A Vercel deployment URL supplies a fallback when this value is absent.
+2. Add `MONGODB_URI`, `MONGODB_DB` and `STATS_SECRET` to the production environment. Set `NEXT_PUBLIC_SITE_URL` to the project's public domain. A Vercel deployment URL supplies a fallback when this value is absent.
 3. Deploy from the dashboard or run `npx vercel deploy --prod` from an authenticated CLI. Redeploy after changing environment variables. The public trip and image endpoints must be accessible to logged-out preview crawlers.
 4. Open `/?internal=1` on the builder’s device before testing. Visit `/stats?key=<your-secret>` privately to check the dashboard and export counts.
 
-Keep credentials and private claim links outside the repository. A temporary, unclaimed service is suitable for synthetic demonstrations. Claim or replace temporary services before collecting real travellers' data. [Vercel environment configuration](https://vercel.com/docs/environment-variables) · [Upstash setup](https://upstash.com/docs/redis/overall/getstarted)
+Keep credentials and private claim links outside the repository. A temporary, unclaimed service is suitable for synthetic demonstrations. Claim or replace temporary services before collecting real travellers' data. [Vercel environment configuration](https://vercel.com/docs/environment-variables) · [MongoDB connection setup](https://www.mongodb.com/docs/drivers/node/current/connect/mongoclient/)
 
 ## Budget entry
 
@@ -86,7 +90,7 @@ Travellers type a positive whole-rupee budget manually on the landing and join f
 
 ## How the planner works
 
-- **Rooms** use 10-character IDs and a fixed 30-day Redis expiry. Atomic vote updates keep the existing expiry, deduplicate by a room-specific ID and enforce the 20-person cap. The shared reveal flag and four-second SWR polling keep the results usable for late joiners.
+- **Rooms** use 10-character IDs and a fixed 30-day MongoDB expiry. Atomic vote updates keep the existing expiry, deduplicate by a room-specific ID and enforce the 20-person cap. The shared reveal flag and four-second SWR polling keep the results usable for late joiners.
 - **Vibes** accept one to ten selections, including custom text up to 40 characters per choice. Custom choices appear in the group meter and match destination descriptions through deterministic keywords.
 - **Recommendations** rank reachable destinations using votes, the cheapest participant’s budget, weather and estimated crowd. The second pick differs in region or vibe. Edits invalidate the shortlist through its vote-dependent cache key.
 - **Transport** ranks available modes by usable arrival time, total transport cost, pickup conditions, forecast sensitivity and overnight travel. Cost includes both last-mile transfers. Selecting another route updates costs and carries the selection into the brief and card.
@@ -104,12 +108,14 @@ npm run build
 npm start
 ```
 
+MongoDB regression tests use a disposable local server and require an explicit opt-in. In PowerShell run `$env:MONGODB_INTEGRATION='1'; $env:MONGOMS_DOWNLOAD_DIR="$PWD/.cache/mongodb"; npm test -- backend/tests/mongodb.test.ts`. The first run downloads the MongoDB server binary; subsequent runs reuse it. The test database is temporary and does not use your configured Atlas database.
+
 | Check | Result in this session |
 | --- | --- |
 | Core and regression tests | 37 passed across recommendation, weather, crowd, Smart Swap, cost split, transport, Parent Pack, resistance, dates, analytics, room expiry and quotas. |
 | Group flow | Two separate 375 px Chromium browser contexts created and joined a room. The first browser displayed the other vote in 2.4 seconds. Both saw the shared reveal. |
 | Solo and transport flow | Solo went straight to recommendations. Selecting another route changed the displayed estimate from ₹5,095 to ₹5,670 and carried that route into the Parent Pack. |
-| Real Redis | The production server created a room against Upstash, processed concurrent duplicate votes as one member, and retained approximately 30 days of TTL after updates. The eleventh creation request returned a friendly HTTP 429. |
+| MongoDB storage | Five tests passed against a disposable real MongoDB server: concurrent voting and edits, capacity, unchanged expiry, expired/solo rejection, sliding quotas, persisted analytics and production configuration. Atlas/deployment verification is pending a configured connection string. |
 | Real weather and failure handling | Open-Meteo returned forecasts for both picks in a production smoke test. Unit tests cover request failure, incomplete forecasts and dates outside the forecast window. |
 | Share previews | A WhatsApp crawler request received OG image tags in the initial HTML head. Trip and Parent Brief endpoints returned 1080×1350 PNGs. Both images were visually inspected. |
 | Mobile browser fallbacks | File download, denied clipboard fallback, English output, six checklist items and the expired-room footer passed in Chromium mobile emulation. A second run using WebKit with an iPhone viewport passed solo reveal, PNG download, Parent Pack generation and clipboard fallback. Both engines emitted zero browser JavaScript errors. |

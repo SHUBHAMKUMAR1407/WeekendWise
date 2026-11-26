@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { parseId, type Context, failure } from "../http/api";
 import { cardQuery } from "../schemas/trip";
 import { chosen, requireRoom } from "./reveal";
-import { ApiError } from "../db/redis";
+import { ApiError } from "../db/store";
 import { parentPack } from "./parents";
 import { formatDates } from "../utils/dates";
 import { costSplit } from "./transport";

@@ -1,6 +1,6 @@
 import { body, failure, parseId, type Context } from "@backend/http/api";
 import { joinSchema } from "@backend/schemas/trip";
-import { joinRoom, participantId, rate } from "@backend/db/redis";
+import { joinRoom, participantId, rate } from "@backend/db/store";
 import { trackServer } from "@backend/analytics/analytics";
 export async function POST(req: Request, c: Context) {
   try {

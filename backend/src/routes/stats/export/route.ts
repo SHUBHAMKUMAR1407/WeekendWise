@@ -1,7 +1,7 @@
 import { statsAccess } from "@backend/auth/stats";
 import { metrics, STAGES } from "@backend/analytics/analytics";
 import { todayIST } from "@backend/utils/dates";
-import { requireStore } from "@backend/db/redis";
+import { requireStore } from "@backend/db/store";
 import { failure } from "@backend/http/api";
 export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
