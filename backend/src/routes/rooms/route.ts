@@ -21,7 +21,7 @@ export async function POST(req: Request) {
       internal,
       source,
       city: r.startCity,
-      groupCreated: r.mode === "group",
+      groupCreated: r.mode !== "solo",
     });
     return Response.json(r, { status: 201 });
   } catch (e) {

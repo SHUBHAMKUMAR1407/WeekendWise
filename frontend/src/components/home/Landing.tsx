@@ -25,7 +25,7 @@ export default function Landing({
   const router = useRouter(),
     [address, setAddress] = useState(""),
     [budget, setBudget] = useState(4500),
-    [mode, setMode] = useState<"group" | "solo">("group"),
+    [mode, setMode] = useState<Room["mode"]>("group"),
     [when, setWhen] = useState("this"),
     [dates, setDates] = useState(initial),
     [vibes, setVibes] = useState<string[]>([]),
@@ -132,7 +132,7 @@ export default function Landing({
             Who's coming?
           </legend>
           <div className="seg mode">
-            {(["solo", "group"] as const).map((k) => (
+            {(["solo", "group", "family"] as const).map((k) => (
               <button
                 key={k}
                 aria-pressed={mode === k}
@@ -140,7 +140,7 @@ export default function Landing({
                 onClick={() => setMode(k)}
               >
                 {k === "solo" ? <User size={15} /> : <Users size={16} />}{" "}
-                {k === "solo" ? "Solo" : "With friends"}
+                {k === "solo" ? "Solo" : k === "family" ? "Family" : "With friends"}
                 {mode === k && <Check size={13} />}
               </button>
             ))}
@@ -169,7 +169,7 @@ export default function Landing({
         <button className="primary" disabled={busy}>
           {busy
             ? "Creating your trip…"
-            : mode === "group"
+            : mode !== "solo"
               ? "Create Trip Link"
               : "Plan my trip"}
           <ArrowRight size={20} />

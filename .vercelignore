@@ -3,7 +3,9 @@ node_modules
 .next-dev
 .git
 .env*
+**/.env*
 !.env.example
+!**/.env.example
 .vercel
 *.tsbuildinfo
 

@@ -2,11 +2,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import nextEnv from "@next/env";
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-nextEnv.loadEnvConfig(projectRoot, process.env.NODE_ENV !== "production", console, true);
+nextEnv.loadEnvConfig(path.join(projectRoot, "backend"), process.env.NODE_ENV !== "production", console, true);
 export default (phase) => ({
   distDir: phase === "phase-development-server" ? ".next-dev" : ".next",
   outputFileTracingIncludes: { "/api/og/**": ["./public/card-fonts/*.woff"] },
-  outputFileTracingExcludes: { "/*": ["./.env*", "./.next-dev/**"] },
+  outputFileTracingExcludes: { "/*": ["./.env*", "../backend/.env*", "./.next-dev/**"] },
   poweredByHeader: false,
   devIndicators: false,
   outputFileTracingRoot: projectRoot,

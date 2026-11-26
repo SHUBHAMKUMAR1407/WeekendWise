@@ -184,7 +184,7 @@ export function parentPack(input: ParentPackInput): ParentPackOutput {
       }[pick.weather.verdict]
     : "forecast unavailable";
   const conditions = `Weather: ${weather}. Estimated crowd level: ${pick.crowd.label}.`;
-  const company = solo ? "a solo trip" : "a trip with friends";
+  const company = solo ? "a solo trip" : room.mode === "family" ? "a trip with family" : "a trip with friends";
   const prompt = prompts.english[strictness][worry];
   const returnPlan = pick.transport.returnPlan;
   const brief = {

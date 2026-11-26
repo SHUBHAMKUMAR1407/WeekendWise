@@ -20,6 +20,8 @@ export async function generateMetadata({ params }: Context): Promise<Metadata> {
       " · " +
       (r.mode === "solo"
         ? "See my weekend plan."
+        : r.mode === "family"
+          ? "Vote on your vibe and plan a weekend with family."
         : "Vote on your vibe and find the gang’s weekend.");
   const base = siteUrl(),
     url = base + "/trip/" + id,

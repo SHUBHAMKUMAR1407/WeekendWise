@@ -24,6 +24,8 @@ export function database(): Promise<Db> {
           db.collection("rooms").createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
           db.collection("rate_limits").createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
           db.collection("analytics").createIndex({ scope: 1, "sets.groups": 1 }),
+          db.collection("traveller_updates").createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
+          db.collection("traveller_updates").createIndex({ "report.destinationId": 1, "report.visitedOn": -1, "report.updatedAt": -1, _id: 1 }),
         ]);
         return db;
       } catch (error) {

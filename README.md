@@ -38,7 +38,7 @@ WeekendWise/
 ??? tsconfig.json               # Shared strict TypeScript configuration
 ```
 
-Use `@frontend/*` and `@backend/*` imports for application boundaries. Frontend route adapters export backend handlers so both parts run through the same Next.js server and public origin. Install dependencies and run commands from the repository root. Root environment files supply server configuration. Vercel uses the repository root with build command `npm run build` and output directory `frontend/.next`.
+Use `@frontend/*` and `@backend/*` imports for application boundaries. Frontend route adapters export backend handlers so both parts run through the same Next.js server and public origin. Install dependencies and run commands from the repository root. Environment files in `backend/` supply server configuration. Vercel uses the repository root with build command `npm run build` and output directory `frontend/.next`.
 
 VS Code hides generated build folders, installed dependencies and TypeScript caches through `.vscode/settings.json`. These folders remain available on disk.
 
@@ -51,7 +51,7 @@ npm ci
 npm run dev
 ```
 
-Open [the local planner](http://localhost:3000). Development runs without credentials using process-local memory. Restarting the dev server clears those rooms. To exercise persistent rooms, copy `.env.example` to `.env.local` and configure MongoDB. Production requires MongoDB and returns a friendly service error if storage is unavailable.
+Open [the local planner](http://localhost:3000). Development runs without credentials using process-local memory. Restarting the dev server clears those rooms. To exercise persistent rooms, copy `backend/.env.example` to `backend/.env.local` and configure MongoDB. Production requires MongoDB and returns a friendly service error if storage is unavailable.
 
 | Variable | Value |
 | --- | --- |
@@ -61,13 +61,13 @@ Open [the local planner](http://localhost:3000). Development runs without creden
 | `STATS_SECRET` | A long random secret for the funnel dashboard and CSV |
 | `NEXT_PUBLIC_SITE_URL` | Public HTTPS origin used in WhatsApp and Twitter previews |
 
-For a local MongoDB server, set `MONGODB_URI=mongodb://127.0.0.1:27017` and `MONGODB_DB=weekendwise` in `.env.local`. For Atlas, use your cluster's Node.js connection string, create a database user with read/write access to this database, and allow the application server through Atlas network access. Restart the development server after changing environment variables. A value in `.env.development.local` takes precedence over `.env.local` during development.
+For a local MongoDB server, set `MONGODB_URI=mongodb://127.0.0.1:27017` and `MONGODB_DB=weekendwise` in `backend/.env.local`. For Atlas, use your cluster's Node.js connection string, create a database user with read/write access to this database, and allow the application server through Atlas network access. Restart the development server after changing environment variables. A value in `backend/.env.development.local` takes precedence over `backend/.env.local` during development.
 
 The application reuses its MongoDB connection pool and creates `rooms`, `rate_limits`, and `analytics` collections with indexes automatically. Rooms expire 30 days after creation; reads and updates reject expired rooms immediately even before MongoDB's TTL cleanup runs. Request quotas use atomic sliding hourly windows. Analytics remains best effort and never blocks trip planning when unavailable. Configured MongoDB connection failures return errors rather than silently falling back to memory. Existing Redis data is not copied automatically; older room links require a separate data migration if they must be retained.
 
 ## Google Maps address suggestions
 
-Enable **Places API (New)** in a Google Cloud project with billing enabled. Add its key as `GOOGLE_MAPS_API_KEY` in the root `.env.development.local` (or `.env.local`) and restart `npm run dev -- -p 3001`. For a hosted deployment, add the same server-side variable and redeploy.
+Enable **Places API (New)** in a Google Cloud project with billing enabled. Add its key as `GOOGLE_MAPS_API_KEY` in `backend/.env.development.local` (or `backend/.env.local`) and restart `npm run dev`. For a hosted deployment, add the same server-side variable and redeploy.
 
 Restrict the key to Places API (New), and configure billing quotas for the project. Autocomplete requests are debounced by 350 ms, restricted to India and limited to 120 requests per hour per IP. This implementation uses per-request autocomplete billing. Search text is sent in a POST body and excluded from application analytics. Predictions use no-store responses and are held in the search interface.
 
@@ -127,6 +127,6 @@ MongoDB regression tests use a disposable local server and require an explicit o
 
 [Verification checklist](backend/data/VERIFY.md) covers every destination, transport and holiday field requiring review. The seed includes **27 destinations, 42 origin–destination pairs, 85 gateways and 112 transport options** across ten starting cities. Keep `hasGoSTOPS` false until you verify an operating property. Review holiday dates, timings, fare ranges, last-mile estimates and night pickup before marking a record verified.
 
-Forecast data is provided by [Open-Meteo](https://open-meteo.com/). Seasonal, cost and transport estimates are maintained in this repository.
+Set `WEATHER_API_KEY` in `backend/.env.development.local` (or `backend/.env.local`) and restart the development server to use [WeatherAPI](https://www.weatherapi.com/docs/forecast-api/). For hosted deployments, configure the same server-side variable and redeploy. Requests use destination coordinates and require coverage of every trip date; unavailable forecasts or plan limits fall back to [Open-Meteo](https://open-meteo.com/), then seasonal guidance. Keep the key server-side. Seasonal, cost and transport estimates are maintained in this repository.
 
 [Implementation assumptions](ASSUMPTIONS.md) · [Photography credits](frontend/public/images/CREDITS.md)

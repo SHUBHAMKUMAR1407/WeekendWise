@@ -48,7 +48,7 @@ export interface Room extends DateRange {
   createdAt: string;
   hostName?: string;
   revealed?: boolean;
-  mode: "solo" | "group";
+  mode: "solo" | "group" | "family";
   startCity: StartCity;
   maxBudgetPerPerson: number;
   participants: Participant[];

@@ -431,6 +431,16 @@ select {
   display: flex;
   gap: 5px;
 }
+.seg.mode {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.seg.mode button {
+  flex-wrap: wrap;
+  white-space: normal;
+  padding-inline: 6px;
+  gap: 4px;
+}
 .seg button,
 .chips button,
 .secondary,
@@ -917,3 +927,32 @@ th {
 .custom-vibe-entry input { min-width: 0; flex: 1; }
 .custom-vibe-entry button { flex-shrink: 0; }
 .vibes-field .chips button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+
+.updates-page { max-width: 1040px; }
+.updates-page h1 { font-size: clamp(42px, 6vw, 76px); }
+.updates-intro { max-width: 700px; color: var(--muted); }
+.updates-destination { max-width: 420px; }
+.traveller-updates { min-width: 0; }
+.updates-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.updates-heading .stack { gap: 8px; }
+.updates-heading button { flex-shrink: 0; }
+.updates-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.updates-summary > div { padding: 16px; border: 1px solid var(--border); border-radius: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.updates-summary small { font-size: 10px; letter-spacing: 1px; }
+.updates-list { display: grid; gap: 12px; }
+.visit-report { border-top: 1px solid var(--border); padding-top: 16px; }
+.visit-report strong, .visit-note { overflow-wrap: anywhere; }
+.visit-report .row { align-items: flex-start; flex-wrap: wrap; gap: 6px 16px; }
+.visit-report .chips { flex-wrap: wrap; }
+.updates-empty { padding: 20px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.updates-form { border-top: 1px solid var(--border); padding-top: 20px; }
+.updates-form .field, .updates-destination { display: flex; flex-direction: column; align-items: stretch; gap: 7px; }
+.updates-form textarea { width: 100%; resize: vertical; min-height: 96px; padding: 12px; background: var(--field); border: 1px solid var(--border); border-radius: 8px; }
+.visit-confirm { gap: 10px; align-items: flex-start; font-size: 13px; }
+.visit-confirm input { width: 18px; min-width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--accent); }
+@media (max-width: 690px) {
+  .updates-heading { flex-direction: column; }
+  .updates-summary { grid-template-columns: 1fr; }
+  .mast-right .navlink { font-size: 12px; }
+  .traveller-updates { padding: 16px; }
+}

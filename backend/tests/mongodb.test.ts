@@ -5,6 +5,7 @@ import { createRoom, getRoom, joinRoom, markRevealed, rate, requireStore, TTL } 
 import { metrics, trackServer } from "../src/analytics/analytics";
 import { todayIST } from "../src/utils/dates";
 import type { Participant } from "../src/types/index";
+import { saveUpdate, recentUpdates } from "../src/db/updates";
 
 // Opt in to downloading and launching a real, disposable MongoDB server.
 describe.skipIf(process.env.MONGODB_INTEGRATION !== "1")("MongoDB integration", () => {
@@ -93,6 +94,24 @@ describe.skipIf(process.env.MONGODB_INTEGRATION !== "1")("MongoDB integration", 
       expect(m.avgVoters).toBe(1);
       expect(m.ranks.referrers).toContainEqual(["$example.com", 1]);
     }
+  });
+  it("persists public visitor reports, edits concurrently without duplication, and creates expiry indexes", async () => {
+    const destinationId = "manali";
+    const input = { anonId: crypto.randomUUID(), name: "Visitor", visitedOn: todayIST(),
+      weather: "rainy" as const, crowd: "busy" as const, experience: "caution" as const,
+      note: "A rainy afternoon.", visited: true as const };
+    const first = await saveUpdate(destinationId, input);
+    await Promise.all(Array.from({ length: 5 }, () => saveUpdate(destinationId, { ...input, crowd: "quiet" })));
+    const other = await saveUpdate(destinationId, { ...input, anonId: crypto.randomUUID(), weather: "sunny", experience: "go" });
+    const result = await recentUpdates(destinationId);
+    expect(result.reports).toHaveLength(2);
+    expect(result.reports.find((r) => r.id === first.id)?.crowd).toBe("quiet");
+    expect(result.reports.some((r) => r.id === other.id)).toBe(true);
+    expect(result.summary.count).toBe(2);
+    expect(result.summary.experience).toEqual({ caution: 1, go: 1 });
+    expect(JSON.stringify(result)).not.toContain(input.anonId);
+    const indexes = await (await database()).collection("traveller_updates").indexes();
+    expect(indexes.some((index) => index.key.expiresAt === 1 && index.expireAfterSeconds === 0)).toBe(true);
   });
   it("requires MongoDB configuration in production", () => {
     vi.stubEnv("MONGODB_URI", "");

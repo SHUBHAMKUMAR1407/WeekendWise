@@ -95,9 +95,9 @@ export default function RoomView({ initial }: { initial: Room }) {
       <div className="room-head">
         <span className="eyebrow">
           <span />
-          {solo ? "SOLO TRIP" : "GROUP TRIP"}
+          {solo ? "SOLO TRIP" : r.mode === "family" ? "FAMILY TRIP" : "GROUP TRIP"}
         </span>
-        <h1>{solo ? "Your weekend." : "Weekend with the gang."}</h1>
+        <h1>{solo ? "Your weekend." : r.mode === "family" ? "Weekend with family." : "Weekend with the gang."}</h1>
         <div className="row">
           <span className="muted">
             {r.startCity} · {formatDates(r.startDate, r.endDate)} ·{" "}
@@ -165,8 +165,8 @@ export default function RoomView({ initial }: { initial: Room }) {
               </>
             ) : (
               <p>
-                No votes yet. Add the first vote or invite your
-                friends.
+                No votes yet. Add the first vote or invite your{" "}
+                {r.mode === "family" ? "family" : "friends"}.
               </p>
             )}
           </section>

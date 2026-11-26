@@ -232,7 +232,7 @@ export async function card(req: Request, c: Context, kind: "trip" | "parent") {
               {p.destination.name}
             </b>
             <span style={{ fontSize: 30, margin: "5px 0 24px" }}>
-              {date} · {r.mode === "solo" ? "Solo" : "With friends"} ·{" "}
+              {date} · {r.mode === "solo" ? "Solo" : r.mode === "family" ? "With family" : "With friends"} ·{" "}
               {money(cost.total)} est.
             </span>
             {[

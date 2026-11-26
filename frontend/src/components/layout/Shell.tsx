@@ -15,7 +15,8 @@ export function Header() {
           <span className="live-dot" />
           <span className="tiny desk">WEEKEND TRIP PLANNER</span>
           <span className="mast-divider" />
-          <a href="/#how" className="navlink">
+          <Link href="/updates" className="navlink">Traveller updates</Link>
+          <a href="/#how" className="navlink desk">
             How it works <ArrowUpRight size={15} />
           </a>
         </div>

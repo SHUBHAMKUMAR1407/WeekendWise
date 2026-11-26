@@ -11,6 +11,10 @@ const trip = {
 };
 
 describe("preset and custom vibes", () => {
+  it("accepts family trips with member preferences collected through the trip link", () => {
+    expect(createSchema.safeParse({ ...trip, mode: "family" }).success).toBe(true);
+    expect(createSchema.safeParse({ ...trip, mode: "family", solo: { name: "Asha", vibes: ["Photography"] } }).success).toBe(false);
+  });
   it.each([["peace_cafes"], ["Photography"], ["peace_cafes", "Beach hopping"], [...VIBE_TAGS]])("accepts at least one vibe, including custom-only choices", (...vibes) => {
     expect(createSchema.safeParse({ ...trip, solo: { name: "Asha", vibes } }).success).toBe(true);
     expect(joinSchema.safeParse({ ...identity, name: "Asha", comfortBudget: 8000, vibes }).success).toBe(true);

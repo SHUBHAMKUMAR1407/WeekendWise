@@ -92,6 +92,78 @@ export function forecastVerdict(
   };
 }
 
+const weatherApiSchema = z.object({
+  forecast: z.object({
+    forecastday: z.array(z.object({
+      date: z.string().date(),
+      day: z.object({
+        mintemp_c: z.number().finite(),
+        maxtemp_c: z.number().finite(),
+        daily_chance_of_rain: z.coerce.number().min(0).max(100),
+        condition: z.object({ code: z.number().int() }),
+      }),
+    })).nonempty(),
+  }),
+});
+
+// Normalize WeatherAPI conditions into the existing WMO verdict rules.
+function weatherApiCode(code: number): number | null {
+  if ([1000, 1003, 1006, 1009].includes(code)) return 0;
+  if ([1030, 1135, 1147].includes(code)) return 45;
+  if ([1087, 1273, 1276, 1279, 1282].includes(code)) return 95;
+  if ([1117, 1171, 1192, 1195, 1201, 1207, 1222, 1225, 1243, 1246, 1252, 1258, 1264].includes(code)) return 65;
+  if ([1063, 1066, 1069, 1072, 1114, 1150, 1153, 1168, 1180, 1183, 1186, 1189, 1198, 1204, 1210, 1213, 1216, 1219, 1237, 1240, 1249, 1255, 1261].includes(code)) return 51;
+  return null;
+}
+
+export function weatherApiVerdict(payload: unknown, dates: TripDates): WeatherResult | null {
+  const parsed = weatherApiSchema.safeParse(payload);
+  if (!parsed.success) return null;
+  const days = parsed.data.forecast.forecastday.filter(
+    (day) => day.date >= dates.startDate && day.date <= dates.endDate,
+  );
+  const codes = days.map(({ day }) => weatherApiCode(day.condition.code));
+  if (codes.some((code) => code === null)) return null;
+  return forecastVerdict({ daily: {
+    time: days.map((day) => day.date),
+    precipitation_probability_max: days.map(({ day }) => day.daily_chance_of_rain),
+    temperature_2m_min: days.map(({ day }) => day.mintemp_c),
+    temperature_2m_max: days.map(({ day }) => day.maxtemp_c),
+    weather_code: codes,
+  } }, dates);
+}
+
+async function weatherApiForecast(
+  dest: Pick<Destination, "lat" | "lon">,
+  dates: TripDates,
+  ahead: number,
+  request: typeof fetch,
+): Promise<WeatherResult | null> {
+  const key = process.env.WEATHER_API_KEY?.trim();
+  if (!key || ahead >= 14) return null;
+  const query = new URLSearchParams({
+    key,
+    q: `${dest.lat},${dest.lon}`,
+    days: String(ahead + 1),
+    aqi: "no",
+    alerts: "no",
+  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 3500);
+  try {
+    const response = await request(`https://api.weatherapi.com/v1/forecast.json?${query}`, {
+      signal: controller.signal,
+      next: { revalidate: 10800 },
+    });
+    if (!response.ok) return null;
+    return weatherApiVerdict(await response.json(), dates);
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function weather(
   dest: Pick<Destination, "lat" | "lon" | "bestTime">,
   dates: TripDates,
@@ -103,6 +175,8 @@ export async function weather(
   const ahead = daysBetween(today, dates.endDate);
   if (dates.startDate < today || dates.endDate < dates.startDate || ahead >= 16)
     return fallback;
+  const primary = await weatherApiForecast(dest, dates, ahead, request);
+  if (primary) return primary;
   const query = new URLSearchParams({
     latitude: String(dest.lat),
     longitude: String(dest.lon),

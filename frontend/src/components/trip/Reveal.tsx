@@ -19,6 +19,7 @@ import type { PickResult, Recommendation } from "@backend/services/planner";
 import { costSplit } from "@backend/services/transport";
 import { json, track } from "@frontend/lib/client";
 import { ShareCard } from "./Share";
+import TravellerUpdates from "./TravellerUpdates";
 export const verdictLabel = (v: string | null) =>
   v ? v.replaceAll("_", " ") : "Seasonal outlook";
 const formatRange = (r: [number, number]) => money(r[0]) + "–" + money(r[1]);
@@ -137,6 +138,7 @@ function DestinationCard({ pick: p, room }: { pick: PickResult; room: Room }) {
           </details>
         </div>
       </div>
+      <TravellerUpdates destinationId={d.id} destinationName={d.name} />
       <h3>How to get there</h3>
       <p>{p.transport.reason}</p>
       <div className="routes">

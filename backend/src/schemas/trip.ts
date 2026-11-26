@@ -38,7 +38,7 @@ export const joinSchema = z
 export const createSchema = z
   .object({
     ...identity,
-    mode: z.enum(["solo", "group"]),
+    mode: z.enum(["solo", "group", "family"]),
     startCity: z.enum(START_CITIES),
     startDate: iso,
     endDate: iso,

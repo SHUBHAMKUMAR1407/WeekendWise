@@ -26,6 +26,14 @@ const person = (id: string): Participant => ({
   joinedAt: new Date().toISOString(),
 });
 describe("room lifecycle", () => {
+  it("lets family members join, vote and reveal their trip", async () => {
+    const r = await createRoom({ ...input, mode: "family" });
+    expect((await getRoom(r.id))?.mode).toBe("family");
+    await joinRoom(r.id, person("family-member"));
+    const revealed = await markRevealed(r.id);
+    expect(revealed.revealed).toBe(true);
+    expect(revealed.participants).toHaveLength(1);
+  });
   it("allows repeated local development actions and enforces quotas outside development", async () => {
     const environment = process.env.NODE_ENV;
     const req = new Request("http://localhost", { headers: { "x-forwarded-for": "development-quota-check" } });
