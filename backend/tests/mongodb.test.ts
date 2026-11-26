@@ -6,6 +6,8 @@ import { metrics, trackServer } from "../src/analytics/analytics";
 import { todayIST } from "../src/utils/dates";
 import type { Participant } from "../src/types/index";
 import { saveUpdate, recentUpdates } from "../src/db/updates";
+import { saveCrowdSignal, crowdInsights } from "../src/db/crowd";
+import records from "../data/destinations.json";
 
 // Opt in to downloading and launching a real, disposable MongoDB server.
 describe.skipIf(process.env.MONGODB_INTEGRATION !== "1")("MongoDB integration", () => {
@@ -112,6 +114,35 @@ describe.skipIf(process.env.MONGODB_INTEGRATION !== "1")("MongoDB integration", 
     expect(JSON.stringify(result)).not.toContain(input.anonId);
     const indexes = await (await database()).collection("traveller_updates").indexes();
     expect(indexes.some((index) => index.key.expiresAt === 1 && index.expireAfterSeconds === 0)).toBe(true);
+  });
+  it("aggregates the entire five-day crowd history, deduplicates browser/day signals, and stores no coordinates", async () => {
+    const destination = records.find((d) => d.id === "rishikesh")!;
+    const browser = crypto.randomUUID();
+    for (let i = 0; i < 22; i++) await saveUpdate(destination.id, {
+      anonId: i === 0 ? browser : crypto.randomUUID(), name: "Visitor", visitedOn: todayIST(),
+      weather: "sunny", crowd: "quiet", experience: "go", note: "", visited: true,
+    });
+    const input = { kind: "checkin" as const, anonId: browser, consent: true as const,
+      crowd: "busy" as const, latitude: destination.lat, longitude: destination.lon, accuracy: 20, timestamp: Date.now() };
+    await Promise.all(Array.from({ length: 5 }, () => saveCrowdSignal(destination.id, input)));
+    const dates = { startDate: todayIST(), endDate: todayIST() };
+    const interest = { kind: "interest" as const, anonId: browser, interested: true, ...dates };
+    await Promise.all(Array.from({ length: 5 }, () => saveCrowdSignal(destination.id, interest)));
+    const result = await crowdInsights(destination.id, dates);
+    expect(result.days).toHaveLength(5);
+    expect(result.days[4]).toMatchObject({ samples: 22, checkins: 1, reports: 21, level: 1.1 });
+    expect(result.days.slice(0, 4).every((d) => d.level === null && d.samples === 0)).toBe(true);
+    expect(result.planning).toBe(1);
+    expect(JSON.stringify(result)).not.toContain(browser);
+    const collection = (await database()).collection("crowd_signals");
+    const checkins = await collection.find({ destinationId: destination.id, kind: "checkin" }).toArray();
+    expect(checkins).toHaveLength(1);
+    for (const key of ["anonId", "latitude", "longitude", "accuracy", "timestamp", "ip"])
+      expect(checkins[0]).not.toHaveProperty(key);
+    const indexes = await collection.indexes();
+    expect(indexes.some((index) => index.key.expiresAt === 1 && index.expireAfterSeconds === 0)).toBe(true);
+    await saveCrowdSignal(destination.id, { ...interest, interested: false });
+    expect((await crowdInsights(destination.id, dates)).planning).toBe(0);
   });
   it("requires MongoDB configuration in production", () => {
     vi.stubEnv("MONGODB_URI", "");

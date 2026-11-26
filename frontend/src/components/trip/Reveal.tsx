@@ -20,6 +20,7 @@ import { costSplit } from "@backend/services/transport";
 import { json, track } from "@frontend/lib/client";
 import { ShareCard } from "./Share";
 import TravellerUpdates from "./TravellerUpdates";
+import CrowdInsights from "./CrowdInsights";
 export const verdictLabel = (v: string | null) =>
   v ? v.replaceAll("_", " ") : "Seasonal outlook";
 const formatRange = (r: [number, number]) => money(r[0]) + "–" + money(r[1]);
@@ -124,7 +125,7 @@ function DestinationCard({ pick: p, room }: { pick: PickResult; room: Room }) {
         <div className="subpanel stack">
           <div className="row">
             <Users className="lime" />
-            <small>CROWD ESTIMATE</small>
+            <small>EXPECTED CROWD · TRIP DATES</small>
           </div>
           <h3>{p.crowd.label}</h3>
           <label>Estimated crowd level · {p.crowd.level}/5</label>
@@ -132,12 +133,14 @@ function DestinationCard({ pick: p, room }: { pick: PickResult; room: Room }) {
             <span style={{ width: p.crowd.level * 20 + "%" }} />
           </div>
           <p>{p.crowd.tip}</p>
+          <small>Seasonal, weekend and holiday estimate. Recent visitor observations are shown separately below.</small>
           <details>
             <summary>Why this estimate?</summary>
             <p>{p.crowd.reasons.join(" ")}</p>
           </details>
         </div>
       </div>
+      <CrowdInsights destinationId={d.id} destinationName={d.name} tripDates={{ startDate: room.startDate, endDate: room.endDate }} />
       <TravellerUpdates destinationId={d.id} destinationName={d.name} />
       <h3>How to get there</h3>
       <p>{p.transport.reason}</p>

@@ -99,9 +99,9 @@ export async function markRevealed(id: string) {
     room.revealed = true;
   });
 }
-const limits = { create: 10, vote: 60, event: 300, places: 120, report: 10 };
+const limits = { create: 10, vote: 60, event: 300, places: 120, report: 10, crowd: 20 };
 export async function rate(req: Request, scope: keyof typeof limits) {
-  if (process.env.NODE_ENV === "development" && scope !== "places" && scope !== "report") return;
+  if (process.env.NODE_ENV === "development" && scope !== "places" && scope !== "report" && scope !== "crowd") return;
   requireStore();
   const ip = hash(req.headers.get("x-vercel-forwarded-for")?.split(",")[0] ||
     req.headers.get("x-forwarded-for")?.split(",")[0] || "local");

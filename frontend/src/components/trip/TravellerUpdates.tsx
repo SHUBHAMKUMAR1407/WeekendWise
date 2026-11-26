@@ -1,6 +1,6 @@
 "use client";
 import { useId, useState, type FormEvent } from "react";
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
 import { CloudSun, MessageSquare, Users } from "lucide-react";
 import { identity, json } from "@frontend/lib/client";
 import { addDays, todayIST } from "@backend/utils/dates";
@@ -17,6 +17,7 @@ function common<T extends string>(counts: Partial<Record<T, number>>, labels: Re
 }
 export default function TravellerUpdates({ destinationId, destinationName }: { destinationId: string; destinationName: string }) {
   const uid = useId();
+  const { mutate: refresh } = useSWRConfig();
   const url = "/api/updates/" + encodeURIComponent(destinationId);
   const { data, error, mutate, isValidating } = useSWR<Updates>(url, () => json<Updates>(url), { refreshInterval: 60000 });
   const [formOpen, setFormOpen] = useState(false), [showAll, setShowAll] = useState(false);
@@ -35,6 +36,7 @@ export default function TravellerUpdates({ destinationId, destinationName }: { d
       setSuccess("Your update is published. Thanks for helping the next traveller.");
       form.reset(); setFormOpen(false);
       await mutate();
+      await refresh((key) => typeof key === "string" && key.startsWith("/api/crowd/" + encodeURIComponent(destinationId) + "?"));
     } catch (err) { setSubmitError(err instanceof Error ? err.message : "Could not publish. Please try again."); }
     finally { setPending(false); }
   }

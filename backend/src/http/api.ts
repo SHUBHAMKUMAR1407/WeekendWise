@@ -1,6 +1,7 @@
 import { ZodError, type ZodTypeAny, z } from "zod";
 import { ApiError } from "../db/store";
 import { roomId } from "../schemas/trip";
+import { StorageError } from "../db/storage-error";
 export type Context = { params: Promise<{ id: string }> };
 export async function parseId(c: Context) {
   return roomId.parse((await c.params).id);
@@ -21,6 +22,13 @@ export async function body<T extends ZodTypeAny>(
   }
 }
 export function failure(e: unknown) {
+  if (e instanceof StorageError) {
+    console.error("[WeekendWise] Database request failed", { code: e.code });
+    return Response.json(
+      { error: e.message, code: e.code },
+      { status: 503, headers: { "Cache-Control": "no-store" } },
+    );
+  }
   const status =
     e instanceof ApiError ? e.status : e instanceof ZodError ? 400 : 503;
   return Response.json(
